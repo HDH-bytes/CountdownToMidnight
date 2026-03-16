@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 86f50f3089c625a449737786d1d661f5
+guid: eba1555efa466224f92ea65681973290
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4723107735738678597
-    second: Idle_0
-  - first:
-      213: -7385789195546760866
-    second: Idle_1
+      213: 1030219907804930814
+    second: Character_down_idle_no-hands-Sheet6_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -103,12 +100,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Idle_0
+      name: Character_down_idle_no-hands-Sheet6_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 16
+        width: 11
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -118,41 +115,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 54d7a982679db8140800000000000000
-      internalID: 4723107735738678597
+      spriteID: ef2af3d3c831c4e00800000000000000
+      internalID: 1030219907804930814
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_1
+      name: Character_down_idle_no-hands-Sheet6_1
       rect:
         serializedVersion: 2
-        x: 16
+        x: 11
         y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e596485bbd7608990800000000000000
-      internalID: -7385789195546760866
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Idle_2
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 16
+        width: 11
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -162,19 +137,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7442dfee55ce0304298006acff85a85c
-      internalID: -1819905557
+      spriteID: 3ecaf615acfce5446930ff6979da8b9b
+      internalID: 1414783588
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_3
+      name: Character_down_idle_no-hands-Sheet6_2
       rect:
         serializedVersion: 2
-        x: 48
+        x: 22
         y: 0
-        width: 16
+        width: 11
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -184,8 +159,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5f8680f843dae604193863a20b33c72c
-      internalID: -475873440
+      spriteID: d3204fc67fc884f4983e68318fbc3f91
+      internalID: 1167356651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_down_idle_no-hands-Sheet6_3
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 0
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8a1b2d24fa998441b6ee88df463ccb3
+      internalID: -631908960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_down_idle_no-hands-Sheet6_4
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 0
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a9c3a31bfdda5c47841632babb90284
+      internalID: 892793959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_down_idle_no-hands-Sheet6_5
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 0
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87546bff6b14ca8468afa0d043e6173d
+      internalID: 111088420
       vertices: []
       indices: 
       edges: []
@@ -194,7 +235,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: bf0622c74def84944ace253ab36d888d
+    spriteID: 9d6b5b2bd064c1e4988f054c7ece5dd0
     internalID: 0
     vertices: []
     indices: 
@@ -204,12 +245,14 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":11.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Idle_0: 4723107735738678597
-      Idle_1: -7385789195546760866
-      Idle_2: -1819905557
-      Idle_3: -475873440
+      Character_down_idle_no-hands-Sheet6_0: 1030219907804930814
+      Character_down_idle_no-hands-Sheet6_1: 1414783588
+      Character_down_idle_no-hands-Sheet6_2: 1167356651
+      Character_down_idle_no-hands-Sheet6_3: -631908960
+      Character_down_idle_no-hands-Sheet6_4: 892793959
+      Character_down_idle_no-hands-Sheet6_5: 111088420
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
