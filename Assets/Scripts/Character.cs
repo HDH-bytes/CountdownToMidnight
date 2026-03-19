@@ -18,11 +18,8 @@ public abstract class Character : MonoBehaviour, IDamageable
     {
         currentHealth = maxHealth;
     }
- 
-    public virtual void Move(Vector2 direction)
-    {
-        transform.position += (Vector3)(direction * speed * Time.deltaTime);
-    }
+    
+    //should we have move here, so it can be extended?
  
     public virtual void TakeDamage(int amount)
     {

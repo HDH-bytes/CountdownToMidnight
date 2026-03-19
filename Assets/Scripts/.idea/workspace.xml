@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9e7f9871-3d72-4882-9f61-7beba6d59900" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Character.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Character.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +18,7 @@
     <setting file="file://$PROJECT_DIR$/Character.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Enemy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PlayerMovement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Potion.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Weapon.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -53,7 +55,7 @@
       <workItem from="1773962512983" duration="95000" />
       <workItem from="1773962610781" duration="96000" />
       <workItem from="1773962709316" duration="158000" />
-      <workItem from="1773962870565" duration="28000" />
+      <workItem from="1773962870565" duration="663000" />
     </task>
     <servers />
   </component>
