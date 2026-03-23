@@ -1,0 +1,6 @@
+This folder allows our team to showcase their attendance.
+
+We plan on working on one workstation TOGETHER - but we want our names on the commit history.
+
+Meeting on March 6 participants: Jesse, Victor, Hammad
+Meeting on March 13 participants: Everyone
