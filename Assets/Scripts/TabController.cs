@@ -7,7 +7,7 @@ public class TabController : MonoBehaviour
 {
     public Image[] tabImages;
     public GameObject[] pages;
-
+    //Completed
     // Start is called before the first frame update
     void Start()
     {

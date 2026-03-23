@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e0a7728d-6079-42d9-b44a-1f49cd0d40b3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/NormalFont SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NormalFont SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/demo.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/demo.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/newSceneH.scenetemplate" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/newSceneH.scenetemplate" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Glyph Report.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Glyph Report.txt.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TabController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TabController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,6 +91,7 @@
       <workItem from="1774305829865" duration="22000" />
       <workItem from="1774305938262" duration="11000" />
       <workItem from="1774305971015" duration="199000" />
+      <workItem from="1774306983844" duration="33000" />
     </task>
     <servers />
   </component>
