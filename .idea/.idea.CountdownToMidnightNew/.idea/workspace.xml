@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e0a7728d-6079-42d9-b44a-1f49cd0d40b3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TabController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TabController.cs" afterDir="false" />
-    </list>
+    <list default="true" id="e0a7728d-6079-42d9-b44a-1f49cd0d40b3" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -92,6 +90,7 @@
       <workItem from="1774305938262" duration="11000" />
       <workItem from="1774305971015" duration="199000" />
       <workItem from="1774306983844" duration="33000" />
+      <workItem from="1774307035972" duration="55000" />
     </task>
     <servers />
   </component>
