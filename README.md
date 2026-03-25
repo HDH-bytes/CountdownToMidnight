@@ -16,15 +16,19 @@ Core Game Progession:
 - Players will be able to visit the black market shop to spend points
 - Players unlock new weapons as they aim to complete the 5 levels.
 
-#Level Design:
+# Level Design:
 
 Level 1 - Stealth (Hammad): Avoid enemies as they patrol the routes, and reach the end of the map.
+
 Level 2 - Knife Attack (Victor): Eliminate all enemies with knife or reach the end zone of the level.
+
 Level 3 - Sniper Defense (Jeese): Survive a 2 minute horde siege with a sniper.
+
 Level 4 - Maze (Demir): Navigate through a maze with patrolling guards
+
 Level 5 - Boss (Justin): Defeat the final boss using all weapons acquired.
 
-#What has been implemented: (2026-03-25)
+# What has been implemented: (2026-03-25)
 
 Tilemap-based world with multiple layers, collision and a navigable environment
 Player movement with animations and smooth movement
@@ -32,7 +36,7 @@ Camera Tracking
 Majority of Scripts are near production level with OOP principles and modular set in mind.
 UI/Menu is a work in progress but shows new interactivity by allowing a name to be written and a character select screen.
 
-#Member Contributions Overview
+# Member Contributions Overview
 Please check the commit histories on both oldCommit and main for the full story.
 
 Hammad (HDH-bytes): 
