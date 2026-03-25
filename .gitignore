@@ -43,6 +43,7 @@ ExportedObj/
 *.csproj
 *.unityproj
 *.sln
+*.slnx
 *.suo
 *.tmp
 *.user
@@ -54,6 +55,19 @@ ExportedObj/
 *.mdb
 *.opendb
 *.VC.db
+
+# IDE specific folders
+.idea/
+.vscode/
+
+# OS-generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
 
 # Unity3D generated meta files
 *.pidb.meta
