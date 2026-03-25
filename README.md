@@ -46,7 +46,7 @@ select screen.
 Reminder: Please check the commit histories on both oldCommit and main for the full story.
 
 Hammad (HDH-bytes): 
-- Created the Character base class and IDamageable interface. (Uses OOP, such as abstraction)
+- Developed the Character base class and IDamageable interface. (Uses OOP, such as abstraction)
 - Implemented the intital tilemap with Japan themed tile palette.
 - Built the first playable map (w/ house, cabins, shops) with proper layer setup (Ground, WalkBehind, WalkInFront and Decor)
 - Added tilemap and player collision using RigidBody mechanic
