@@ -4,6 +4,6 @@ public class levelManager
 {
     public void CompleteLevel()
     {
-        FindObjectOfType<ScoreManager>().AddPoints(100);
+        ScoreManager.Instance.AddPoints(points);
     }
 }
