@@ -31,19 +31,28 @@ Level 5 - Boss (Justin): Defeat the final boss using all weapons acquired.
 # What has been implemented: (2026-03-25)
 
 Tilemap-based world with multiple layers, collision and a navigable environment
-Player movement with animations and smooth movement
+Player movement with animations and smooth movement.
+
 Camera Tracking
+
 Majority of Scripts are near production level with OOP principles and modular set in mind.
-UI/Menu is a work in progress but shows new interactivity by allowing a name to be written and a character select screen.
+
+UI/Menu is a work in progress but shows new interactivity by allowing a name to be written and a character 
+select screen.
+
 
 # Member Contributions Overview
-Please check the commit histories on both oldCommit and main for the full story.
+Reminder: Please check the commit histories on both oldCommit and main for the full story.
 
 Hammad (HDH-bytes): 
 - Created the Character base class and IDamageable interface. (Uses OOP, such as abstraction)
+  
 - Implemented the intital tilemap with Japan themed tile palette.
+  
 - Built the first playable map (w/ house, cabins, shops) with proper layer setup (Ground, WalkBehind, WalkInFront and Decor)
+  
 - Added tilemap and player collision using RigidBody mechanic
+  
 - Bulit the Level 1 urban map.
 
 Jesse (JLBeitz):
