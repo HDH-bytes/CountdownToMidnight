@@ -7,7 +7,6 @@ public class ScoreManager : MonoBehaviour
 
     public int score = 0;
     public TMP_Text scoreText;
-    public Slider ScoreBar;
 
     void Awake()
     {
