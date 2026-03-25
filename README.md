@@ -32,7 +32,7 @@ Level 5 - Boss (Justin): Defeat the final boss using all weapons acquired.
 
 Tilemap-based world with multiple layers, collision and a navigable environment
 
-Player movement with animations and smooth movement.
+Player movement that is smooth and animated.
 
 Camera Tracking
 
