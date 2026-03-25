@@ -22,7 +22,7 @@ Level 1 - Stealth (Hammad): Avoid enemies as they patrol the routes, and reach t
 
 Level 2 - Knife Attack (Victor): Eliminate all enemies with knife or reach the end zone of the level.
 
-Level 3 - Sniper Defense (Jeese): Survive a 2 minute horde siege with a sniper.
+Level 3 - Sniper Defense (Jesse): Survive a 2 minute horde siege with a sniper.
 
 Level 4 - Maze (Demir): Navigate through a maze with patrolling guards
 
@@ -31,6 +31,7 @@ Level 5 - Boss (Justin): Defeat the final boss using all weapons acquired.
 # What has been implemented: (2026-03-25)
 
 Tilemap-based world with multiple layers, collision and a navigable environment
+
 Player movement with animations and smooth movement.
 
 Camera Tracking
@@ -46,13 +47,9 @@ Reminder: Please check the commit histories on both oldCommit and main for the f
 
 Hammad (HDH-bytes): 
 - Created the Character base class and IDamageable interface. (Uses OOP, such as abstraction)
-  
 - Implemented the intital tilemap with Japan themed tile palette.
-  
 - Built the first playable map (w/ house, cabins, shops) with proper layer setup (Ground, WalkBehind, WalkInFront and Decor)
-  
 - Added tilemap and player collision using RigidBody mechanic
-  
 - Bulit the Level 1 urban map.
 
 Jesse (JLBeitz):
