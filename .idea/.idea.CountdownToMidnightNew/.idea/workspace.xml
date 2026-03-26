@@ -6,11 +6,25 @@
   <component name="ChangeListManager">
     <list default="true" id="e0a7728d-6079-42d9-b44a-1f49cd0d40b3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CountdownToMidnightNew/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CountdownToMidnightNew/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinishPoint.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinishPoint.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SceneController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SceneController.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnsureDefaultPlatform.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnsureDefaultPlatform.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character PNGs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character PNGs/Main Character.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character PNGs/Main Character/Character_down_idle_no-hands-Sheet6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character PNGs/Main Character/Character_down_idle_no-hands-Sheet6.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character PNGs/Main Character/Character_down_run_no-hands-Sheet6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character PNGs/Main Character/Character_down_run_no-hands-Sheet6.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character PNGs/Main Character/Character_side-left_idle_no-hands-Sheet6 1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character PNGs/Main Character/Character_side-left_idle_no-hands-Sheet6 1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character PNGs/Main Character/Character_side-left_run_no-hands-Sheet6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character PNGs/Main Character/Character_side-left_run_no-hands-Sheet6.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character PNGs/Main Character/Character_side_idle_no-hands-Sheet6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character PNGs/Main Character/Character_side_idle_no-hands-Sheet6.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character PNGs/Main Character/Character_side_run_no-hands-Sheet6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character PNGs/Main Character/Character_side_run_no-hands-Sheet6.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character PNGs/Main Character/Character_up_idle_no-hands-Sheet6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character PNGs/Main Character/Character_up_idle_no-hands-Sheet6.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character PNGs/Main Character/Character_up_run_no-hands-Sheet6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character PNGs/Main Character/Character_up_run_no-hands-Sheet6.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CountdownToMidnight.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CountdownToMidnight.inputactions" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +33,10 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GlobalHelper.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/IInteractable.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
@@ -104,7 +122,9 @@
       <workItem from="1774481041127" duration="9000" />
       <workItem from="1774481572195" duration="911000" />
       <workItem from="1774489622730" duration="5000" />
-      <workItem from="1774489641237" duration="1824000" />
+      <workItem from="1774489641237" duration="3547000" />
+      <workItem from="1774495106737" duration="8000" />
+      <workItem from="1774495122792" duration="2101000" />
     </task>
     <servers />
   </component>
