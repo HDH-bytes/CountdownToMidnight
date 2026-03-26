@@ -6,25 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="e0a7728d-6079-42d9-b44a-1f49cd0d40b3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CountdownToMidnightNew/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CountdownToMidnightNew/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Character PNGs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Character PNGs/Main Character.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Character PNGs/Main Character/Character_down_idle_no-hands-Sheet6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Character PNGs/Main Character/Character_down_idle_no-hands-Sheet6.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Character PNGs/Main Character/Character_down_run_no-hands-Sheet6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Character PNGs/Main Character/Character_down_run_no-hands-Sheet6.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Character PNGs/Main Character/Character_side-left_idle_no-hands-Sheet6 1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Character PNGs/Main Character/Character_side-left_idle_no-hands-Sheet6 1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Character PNGs/Main Character/Character_side-left_run_no-hands-Sheet6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Character PNGs/Main Character/Character_side-left_run_no-hands-Sheet6.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Character PNGs/Main Character/Character_side_idle_no-hands-Sheet6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Character PNGs/Main Character/Character_side_idle_no-hands-Sheet6.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Character PNGs/Main Character/Character_side_run_no-hands-Sheet6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Character PNGs/Main Character/Character_side_run_no-hands-Sheet6.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Character PNGs/Main Character/Character_up_idle_no-hands-Sheet6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Character PNGs/Main Character/Character_up_idle_no-hands-Sheet6.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Character PNGs/Main Character/Character_up_run_no-hands-Sheet6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Character PNGs/Main Character/Character_up_run_no-hands-Sheet6.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CountdownToMidnight.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CountdownToMidnight.inputactions" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/StartScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/StartScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TextMesh Pro/StartMenuController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TextMesh Pro/StartMenuController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,6 +109,7 @@
       <workItem from="1774489641237" duration="3547000" />
       <workItem from="1774495106737" duration="8000" />
       <workItem from="1774495122792" duration="2101000" />
+      <workItem from="1774498038640" duration="1793000" />
     </task>
     <servers />
   </component>
