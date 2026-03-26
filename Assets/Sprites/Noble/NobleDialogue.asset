@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 824a18ca59941d2428defbff3d9ca21b, type: 3}
+  m_Name: NobleDialogue
+  m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
+  npcName: 
+  npcPortrait: {fileID: -7527145504033472756, guid: 67e0570d209af924b95cc8e157822c1c, type: 3}
+  dialogueLines:
+  - This place is dangerous son.
+  - I'd be getting away from here if I were you
+  - The GSA Safe Area is somewhere East of here
+  autoProgressLines: 
+  autoProgressDelay: 1.5
+  typingSpeed: 0.05
