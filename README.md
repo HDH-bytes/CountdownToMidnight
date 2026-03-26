@@ -64,6 +64,7 @@ Victor (victor-liao93):
 - Made score bar and score text.
 - Made health bar and health text.
 - Made inventory slots.
+- Forgot to apply overrides on the prefabs so they resetted.
 
 Demir (guveld):
 - Added camera to follow the character as it moves.
