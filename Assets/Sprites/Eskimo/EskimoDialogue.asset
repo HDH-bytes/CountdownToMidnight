@@ -10,15 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 824a18ca59941d2428defbff3d9ca21b, type: 3}
-  m_Name: OldManDialogue
+  m_Name: EskimoDialogue
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
-  npcName: Old Man
-  npcPortrait: {fileID: -7527145504033472756, guid: 12fbb387d88e7b841bc10b33a598a8ed, type: 3}
+  npcName: 
+  npcPortrait: {fileID: -7527145504033472756, guid: d25cb3bd1ede48a4480100a1eb5fa874, type: 3}
   dialogueLines:
-  - Excuse me, have you seen my son?
-  - He got drafted almost a year ago but promised me he'd return safe
-  - But then the bombs dropped...
-  - And I don't know if he will be alive to keep his promise
+  - I saw some rioters between here and the safe zone
+  - They looked very dangerous so I'd keep an eye out
   autoProgressLines: 
   autoProgressDelay: 1.5
   typingSpeed: 0.05
