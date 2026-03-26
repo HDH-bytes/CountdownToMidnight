@@ -58,6 +58,9 @@ Victor (victor-liao93):
 
 Demir (guveld): Added follow-up camera and scene transitions.
 
-Justin (jchiu233):
+Justin (jchiu233): 
+- Developed the startup menu with start and exit buttons.
+- Developed the tab UI which when opened can look at inventory, settings and map.
+- Made potions class
 
 
