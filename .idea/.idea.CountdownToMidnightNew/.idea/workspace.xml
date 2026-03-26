@@ -6,9 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="e0a7728d-6079-42d9-b44a-1f49cd0d40b3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CountdownToMidnightNew/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CountdownToMidnightNew/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/Build Profiles/StartDemo.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/Build Profiles/StartDemo.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CountdownToMidnight1.slnx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinishPoint.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinishPoint.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SceneController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SceneController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnsureDefaultPlatform.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnsureDefaultPlatform.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,6 +103,8 @@
       <workItem from="1774476938786" duration="866000" />
       <workItem from="1774481041127" duration="9000" />
       <workItem from="1774481572195" duration="911000" />
+      <workItem from="1774489622730" duration="5000" />
+      <workItem from="1774489641237" duration="1824000" />
     </task>
     <servers />
   </component>

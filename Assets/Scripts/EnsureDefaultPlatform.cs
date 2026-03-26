@@ -3,12 +3,12 @@ using UnityEditor;
 using UnityEditor.Build.Profile;
 
 [InitializeOnLoad]
-public class ForceStartDemoProfile
+public class EnsureDefaultPlatform : MonoBehaviour
 {
     // Path to build profile
     private const string ProfilePath = "Assets/Settings/Build Profiles/StartDemo.asset";
 
-    static ForceStartDemoProfile()
+    static EnsureDefaultPlatform()
     {
         // Get the currently active profile
         BuildProfile activeProfile = BuildProfile.GetActiveBuildProfile();
