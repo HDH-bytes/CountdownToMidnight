@@ -60,7 +60,7 @@ Victor (victor-liao93):
 - Made health bar and health text
 - Made inventory slots
 
-Demir (guveld): A
+Demir (guveld):
 - Added camera to follow the character as it moves.
 - Added a sample scene transition to demonstrate level progression.
 - Added Finish Point and Scene Controller scripts.
