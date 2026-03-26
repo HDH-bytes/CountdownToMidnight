@@ -59,6 +59,7 @@ Victor (victor-liao93):
 - Made score bar and score text
 - Made health bar and health text
 - Made inventory slots
+
 Demir (guveld): A
 - Added camera to follow the character as it moves.
 - Added a sample scene transition to demonstrate level progression.
