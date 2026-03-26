@@ -48,17 +48,20 @@ Reminder: Please check the commit histories on both oldCommit and main for the f
 Hammad (HDH-bytes): 
 - Developed the Character base class and IDamageable interface. (Uses OOP, such as abstraction)
 - Implemented the intital tilemap with Japan themed tile palette.
-- Built the first playable map (w/ house, cabins, shops) with proper layer setup (Ground, WalkBehind, WalkInFront and Decor)
-- Added tilemap and player collision using RigidBody mechanic
+- Built the first playable map (w/ house, cabins, shops) with proper layer setup. (Ground, WalkBehind, WalkInFront and Decor)
+- Added tilemap and player collision using RigidBody mechanic.
 - Bulit the Level 1 urban map.
 
 Jesse (JLBeitz):
-
+- Built the complete animation system for the main character, covering movement, running, and all directional idle states.
+- Implemented startup logic and standardized object tagging to ensure scripts interact correctly with game entities.
+- Set up the essential folder architecture, including prefabs and UI elements, while managing the repository's version control settings.
+  
 Victor (victor-liao93):
-- Made score manager, enemy and enemy follow class with inheritance
-- Made score bar and score text
-- Made health bar and health text
-- Made inventory slots
+- Made score manager, enemy and enemy follow class with inheritance.
+- Made score bar and score text.
+- Made health bar and health text.
+- Made inventory slots.
 
 Demir (guveld):
 - Added camera to follow the character as it moves.
@@ -68,6 +71,6 @@ Demir (guveld):
 Justin (jchiu233): 
 - Developed the startup menu with start and exit buttons.
 - Developed the tab UI which when opened can look at inventory, settings and map.
-- Made potions class
+- Made potions class.
 
 
