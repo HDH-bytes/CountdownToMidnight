@@ -35,7 +35,7 @@ public class NPC : MonoBehaviour, IInteractable
         }
         
     }
-    void StartDialogue()
+    private void StartDialogue()
     {
         _isDialogueActive = true;
         dialogueIndex = 0;
@@ -49,7 +49,7 @@ public class NPC : MonoBehaviour, IInteractable
         StartCoroutine(TypeLine());
     }
 
-    IEnumerator TypeLine()
+    private IEnumerator TypeLine()
     {
         _isTyping = true;
         dialogueText.SetText("");
@@ -70,7 +70,7 @@ public class NPC : MonoBehaviour, IInteractable
         }
     }
 
-    void NextLine()
+    private void NextLine()
     {
         if (_isTyping)
         {

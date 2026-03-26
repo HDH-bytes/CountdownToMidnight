@@ -9,6 +9,8 @@
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/demo.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/demo.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/newSceneH.scenetemplate" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/newSceneH.scenetemplate" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/NPC.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NPC.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Eskimo/EskimoDialogue.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Eskimo/EskimoDialogue.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Noble/NobleDialogue.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Noble/NobleDialogue.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,6 +115,7 @@
       <workItem from="1774495122792" duration="2290000" />
       <workItem from="1774499332425" duration="16000" />
       <workItem from="1774499353008" duration="2496000" />
+      <workItem from="1774507732841" duration="691000" />
     </task>
     <servers />
   </component>
