@@ -56,7 +56,7 @@ Jesse (JLBeitz):
 
 Victor (victor-liao93):
 
-Demir (guveld): Added follow-up camera and scene transitions
+Demir (guveld): Added follow-up camera and scene transitions.
 
 Justin (jchiu233):
 
