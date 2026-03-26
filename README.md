@@ -56,8 +56,11 @@ Jesse (JLBeitz):
 
 Victor (victor-liao93):
 
-Demir (guveld): Added follow-up camera and scene transitions.
-
+Demir (guveld): A
+- Added camera to follow the character as it moves.
+- Added a sample scene transition to demonstrate level progression.
+- Added Finish Point and Scene Controller scripts.
+  
 Justin (jchiu233): 
 - Developed the startup menu with start and exit buttons.
 - Developed the tab UI which when opened can look at inventory, settings and map.
