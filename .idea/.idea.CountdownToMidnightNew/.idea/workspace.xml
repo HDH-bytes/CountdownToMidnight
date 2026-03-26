@@ -8,6 +8,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CountdownToMidnightNew/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CountdownToMidnightNew/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/StartScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/StartScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/TextMesh Pro/StartMenuController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TextMesh Pro/StartMenuController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NPC.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NPC.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NPCDialogue.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NPCDialogue.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -110,6 +112,9 @@
       <workItem from="1774495106737" duration="8000" />
       <workItem from="1774495122792" duration="2101000" />
       <workItem from="1774498038640" duration="1793000" />
+      <workItem from="1774495122792" duration="2290000" />
+      <workItem from="1774499332425" duration="16000" />
+      <workItem from="1774499353008" duration="2496000" />
     </task>
     <servers />
   </component>

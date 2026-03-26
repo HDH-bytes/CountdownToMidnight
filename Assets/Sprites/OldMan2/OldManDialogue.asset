@@ -15,6 +15,8 @@ MonoBehaviour:
   npcName: Old Man
   npcPortrait: {fileID: -7527145504033472756, guid: 12fbb387d88e7b841bc10b33a598a8ed, type: 3}
   dialogueLines:
-  - 
-  - 
+  - Hello there
+  - You are a good boy
+  autoProgressLines: 
+  autoProgressDelay: 1.5
   typingSpeed: 0.05
