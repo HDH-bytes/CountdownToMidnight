@@ -56,7 +56,8 @@ Jesse (JLBeitz):
 - Built the complete animation system for the main character, covering movement, running, and all directional idle states.
 - Implemented startup logic and standardized object tagging to ensure scripts interact correctly with game entities.
 - Set up the essential folder architecture, including prefabs and UI elements, while managing the repository's version control settings.
-- Mostly finished NPC structure with dialogue lines and interactables.
+- Created NPCs with dialogue that explains the story, along with an interaction system for possible future use.
+- Fixed bugs in code whenever they came up.
   
 Victor (victor-liao93):
 - Made score manager, enemy and enemy follow class with inheritance.
