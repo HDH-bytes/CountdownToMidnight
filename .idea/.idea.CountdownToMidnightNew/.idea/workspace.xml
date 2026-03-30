@@ -7,6 +7,9 @@
     <list default="true" id="e0a7728d-6079-42d9-b44a-1f49cd0d40b3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CountdownToMidnightNew/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CountdownToMidnightNew/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/CountdownToMidnight.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CountdownToMidnight.inputactions" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/ChooseCharacter.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/ChooseCharacter.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/demo.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/demo.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/newSceneH.scenetemplate" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/newSceneH.scenetemplate" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,9 +20,15 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/ChooseCharacterController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PlayerSpawner.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GlobalHelper.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/IInteractable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerRotation.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MenuController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Potion.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/TabController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/TextMesh Pro/StartMenuController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
@@ -117,6 +126,8 @@
       <workItem from="1774887605635" duration="16000" />
       <workItem from="1774887630794" duration="5000" />
       <workItem from="1774887654238" duration="2932000" />
+      <workItem from="1774888420130" duration="98000" />
+      <workItem from="1774888572153" duration="1558000" />
     </task>
     <servers />
   </component>
