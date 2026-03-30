@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e0a7728d-6079-42d9-b44a-1f49cd0d40b3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/ChooseCharacterController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ChooseCharacterController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/ChooseCharacter.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/ChooseCharacter.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CountdownToMidnightNew/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CountdownToMidnightNew/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CountdownToMidnight.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CountdownToMidnight.inputactions" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +19,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GlobalHelper.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/IInteractable.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerRotation.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
@@ -113,6 +114,9 @@
       <workItem from="1774499353008" duration="2496000" />
       <workItem from="1774507732841" duration="691000" />
       <workItem from="1774510499235" duration="30000" />
+      <workItem from="1774887605635" duration="16000" />
+      <workItem from="1774887630794" duration="5000" />
+      <workItem from="1774887654238" duration="2932000" />
     </task>
     <servers />
   </component>

@@ -33082,6 +33082,7 @@ GameObject:
   - component: {fileID: 1699267476}
   - component: {fileID: 1699267478}
   - component: {fileID: 1699267479}
+  - component: {fileID: 1699267480}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -33190,7 +33191,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!114 &1699267474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33305,6 +33306,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 87a21b56-f241-47d8-aaa2-9b4ddf85f2c4
     m_ActionName: 'Player/Interact[/Keyboard/e]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1699267480}
+        m_TargetAssemblyTypeName: PlayerRotation, Assembly-CSharp
+        m_MethodName: OnLook
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 8a3775dd-23a7-436c-81c7-2aa4991ae84e
+    m_ActionName: 'Player/Look[/Mouse/position]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -33416,6 +33433,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.54030645, y: 0.9494197}
   m_EdgeRadius: 0
+--- !u!114 &1699267480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699267470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e370217d23b36f43b7b68165a17d8b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerRotation
 --- !u!1 &1739689671
 GameObject:
   m_ObjectHideFlags: 0
