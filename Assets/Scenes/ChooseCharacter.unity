@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 79460064}
   - component: {fileID: 79460063}
   - component: {fileID: 79460062}
+  - component: {fileID: 79460065}
   m_Layer: 0
   m_Name: Idle_0
   m_TagString: Untagged
@@ -290,6 +291,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: c9dec436-cd8b-4ae3-8719-732310ae369f
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8a3775dd-23a7-436c-81c7-2aa4991ae84e
+    m_ActionName: 'Player/Look[/Mouse/position]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -335,6 +340,28 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!95 &79460065
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 79460059}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a2fc0fcb8c8d5644ca0f36ba8e9b538b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &491127204
 GameObject:
   m_ObjectHideFlags: 0
