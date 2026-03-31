@@ -5,12 +5,15 @@ public class EnemyPatrol : MonoBehaviour
     public enum PatrolAxis { Horizontal, Vertical }
 
     [SerializeField] private PatrolAxis axis = PatrolAxis.Horizontal;
-    [SerializeField] private float patrolDistance = 3f;
-    [SerializeField] private float speed = 2f;
+    [SerializeField] private float patrolDistance = 3f; //how far it goes each direction
+    [SerializeField] private float speed = 2f; //movement speed
+    [SerializeField] private float waitTime = 0.5f; //time stopped at the edges
 
     private Rigidbody2D rb;
     private Vector2 startPosition;
     private int direction = 1;
+    private float waitTimer = 0f; //tracks remaining wait time
+    private bool isWaiting = false;
 
     void Start()
     {
@@ -20,21 +23,38 @@ public class EnemyPatrol : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (isWaiting)
+        {
+            rb.linearVelocity = Vector2.zero; //stop while waiting
+            waitTimer -= Time.fixedDeltaTime;
+            if (waitTimer <= 0f)
+                isWaiting = false;
+            return;
+        }
+
         Vector2 moveDir = axis == PatrolAxis.Horizontal ? Vector2.right : Vector2.up;
 
         float currentOffset = axis == PatrolAxis.Horizontal
             ? rb.position.x - startPosition.x
             : rb.position.y - startPosition.y;
 
-        if (currentOffset >= patrolDistance)
+        if (currentOffset >= patrolDistance && direction == 1)
+        {
             direction = -1;
-        else if (currentOffset <= -patrolDistance)
+            isWaiting = true;
+            waitTimer = waitTime; //start wait at far end
+        }
+        else if (currentOffset <= -patrolDistance && direction == -1)
+        {
             direction = 1;
+            isWaiting = true;
+            waitTimer = waitTime; //start wait at near end
+        }
 
         rb.linearVelocity = moveDir * direction * speed;
     }
 
-    //draw patrol range 
+    //draw patrol range
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
