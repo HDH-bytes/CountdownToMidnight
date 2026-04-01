@@ -13,11 +13,20 @@ public class EnemyPatrol : MonoBehaviour
     [SerializeField] private float speed = 2f; //movement speed
     [SerializeField] private float waitTime = 0.5f; //time stopped at the edges
 
+    [Header("Line of Sight")]
+    [SerializeField] private float viewAngle = 70f;   //total cone angle in degrees
+    [SerializeField] private float viewDistance = 5f; //how far the cone reaches
+
     private Rigidbody2D rb;
     private Vector2 startPosition;
     private int direction = 1;
     private float waitTimer = 0f; //tracks remaining wait time
     private bool isWaiting = false;
+    private Vector2 facingDir = Vector2.right; //tracks current facing direction
+
+    private Mesh coneMesh;
+    private MeshFilter coneMeshFilter;
+    private Vector2 lastFacingDir;
 
     void Start()
     {
@@ -26,6 +35,84 @@ public class EnemyPatrol : MonoBehaviour
         direction = axis == PatrolAxis.Horizontal
             ? (horizontalStart == HorizontalStart.Right ? 1 : -1)
             : (verticalStart == VerticalStart.Up ? 1 : -1); //set starting direction from inspector
+
+        facingDir = axis == PatrolAxis.Horizontal
+            ? (direction == 1 ? Vector2.right : Vector2.left)
+            : (direction == 1 ? Vector2.up : Vector2.down);
+
+        SetupConeMesh();
+        BuildConeMesh();
+        lastFacingDir = facingDir;
+    }
+
+    void SetupConeMesh()
+    {
+        GameObject coneObj = new GameObject("VisionCone");
+        coneObj.transform.SetParent(transform);
+        coneObj.transform.localPosition = Vector3.zero;
+        coneObj.transform.localRotation = Quaternion.identity;
+        coneObj.transform.localScale = Vector3.one;
+
+        coneMeshFilter = coneObj.AddComponent<MeshFilter>();
+        MeshRenderer mr = coneObj.AddComponent<MeshRenderer>();
+
+        Material mat = new Material(Shader.Find("Sprites/Default"));
+        mat.color = new Color(1f, 1f, 1f, 0.3f); //light white hue, semi-transparent
+        mr.material = mat;
+
+        //match the enemy's sorting layer so the cone renders on the same layer, just below the sprite
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        if (sr != null)
+        {
+            mr.sortingLayerID = sr.sortingLayerID;
+            mr.sortingOrder = sr.sortingOrder - 1;
+        }
+        else
+        {
+            mr.sortingOrder = 1;
+        }
+
+        coneMesh = new Mesh();
+        coneMeshFilter.mesh = coneMesh;
+    }
+
+    void BuildConeMesh()
+    {
+        int segments = 24;
+        float halfAngle = viewAngle / 2f;
+
+        Vector3[] vertices = new Vector3[segments + 2]; //origin + arc points
+        int[] triangles = new int[segments * 3];
+
+        vertices[0] = Vector3.zero;
+
+        for (int i = 0; i <= segments; i++)
+        {
+            float angle = -halfAngle + (viewAngle / segments) * i;
+            Vector2 dir = Quaternion.Euler(0, 0, angle) * facingDir;
+            vertices[i + 1] = new Vector3(dir.x, dir.y, 0f) * viewDistance;
+        }
+
+        for (int i = 0; i < segments; i++)
+        {
+            triangles[i * 3]     = 0;
+            triangles[i * 3 + 1] = i + 1;
+            triangles[i * 3 + 2] = i + 2;
+        }
+
+        coneMesh.Clear();
+        coneMesh.vertices = vertices;
+        coneMesh.triangles = triangles;
+        coneMesh.RecalculateNormals();
+    }
+
+    void Update()
+    {
+        if (facingDir != lastFacingDir)
+        {
+            BuildConeMesh();
+            lastFacingDir = facingDir;
+        }
     }
 
     void FixedUpdate()
@@ -59,9 +146,42 @@ public class EnemyPatrol : MonoBehaviour
         }
 
         rb.linearVelocity = moveDir * direction * speed;
+        facingDir = moveDir * direction; //update facing as enemy moves
     }
 
-    //draw patrol range
+    //draw line of sight cone in scene view
+    void OnDrawGizmos()
+    {
+        Vector2 origin = (Vector2)transform.position;
+
+        Vector2 facing;
+        if (Application.isPlaying)
+            facing = facingDir;
+        else
+            facing = axis == PatrolAxis.Horizontal
+                ? (horizontalStart == HorizontalStart.Right ? Vector2.right : Vector2.left)
+                : (verticalStart == VerticalStart.Up ? Vector2.up : Vector2.down);
+
+        float halfAngle = viewAngle / 2f;
+        Vector2 leftEdge  = (Vector2)(Quaternion.Euler(0, 0,  halfAngle) * facing) * viewDistance;
+        Vector2 rightEdge = (Vector2)(Quaternion.Euler(0, 0, -halfAngle) * facing) * viewDistance;
+
+        Gizmos.color = new Color(1f, 1f, 1f, 0.6f); //white
+        Gizmos.DrawLine(origin, origin + leftEdge);
+        Gizmos.DrawLine(origin, origin + rightEdge);
+
+        int arcSegments = 20;
+        for (int i = 0; i < arcSegments; i++)
+        {
+            float angleA = -halfAngle + (viewAngle / arcSegments) * i;
+            float angleB = -halfAngle + (viewAngle / arcSegments) * (i + 1);
+            Vector2 pointA = origin + (Vector2)(Quaternion.Euler(0, 0, angleA) * facing) * viewDistance;
+            Vector2 pointB = origin + (Vector2)(Quaternion.Euler(0, 0, angleB) * facing) * viewDistance;
+            Gizmos.DrawLine(pointA, pointB);
+        }
+    }
+
+    //draw patrol range when selected
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
