@@ -11,18 +11,23 @@ public class EnemyPatrol : MonoBehaviour
     [SerializeField] private VerticalStart verticalStart = VerticalStart.Up; //starting direction when vertical
     [SerializeField] private float patrolDistance = 3f; //how far it goes each direction
     [SerializeField] private float speed = 2f; //movement speed
-    [SerializeField] private float waitTime = 0.5f; //time stopped at the edges
+
+    [Header("Turn Behaviour")]
+    [SerializeField] private float waitBeforeTurn = 0.5f; //pause before rotating
+    [SerializeField] private float slowTurnSpeed = 80f;   //degrees per second during deliberate turn
+    [SerializeField] private float waitAfterTurn = 0.3f;  //pause after rotating before walking
 
     [Header("Line of Sight")]
-    [SerializeField] private float viewAngle = 70f;    //total cone angle in degrees
-    [SerializeField] private float viewDistance = 5f;  //how far the cone reaches
-    [SerializeField] private float turnSpeed = 240f;   //degrees per second for the 180 turn
+    [SerializeField] private float viewAngle = 70f;   //total cone angle in degrees
+    [SerializeField] private float viewDistance = 5f; //how far the cone reaches
+
+    private enum PatrolState { Moving, WaitBeforeTurn, Turning, WaitAfterTurn }
+    private PatrolState state = PatrolState.Moving;
 
     private Rigidbody2D rb;
     private Vector2 startPosition;
     private int direction = 1;
-    private float waitTimer = 0f; //tracks remaining wait time
-    private bool isWaiting = false;
+    private float stateTimer = 0f;
     private Vector2 facingDir = Vector2.right; //smoothed facing direction used for cone
 
     private float currentFacingAngle;
@@ -37,7 +42,7 @@ public class EnemyPatrol : MonoBehaviour
         startPosition = rb.position;
         direction = axis == PatrolAxis.Horizontal
             ? (horizontalStart == HorizontalStart.Right ? 1 : -1)
-            : (verticalStart == VerticalStart.Up ? 1 : -1); //set starting direction from inspector
+            : (verticalStart == VerticalStart.Up ? 1 : -1);
 
         Vector2 initialDir = axis == PatrolAxis.Horizontal
             ? (direction == 1 ? Vector2.right : Vector2.left)
@@ -78,7 +83,7 @@ public class EnemyPatrol : MonoBehaviour
         int segments = 24;
         float halfAngle = viewAngle / 2f;
 
-        Vector3[] vertices = new Vector3[segments + 2]; //origin + arc points
+        Vector3[] vertices = new Vector3[segments + 2];
         int[] triangles = new int[segments * 3];
 
         vertices[0] = Vector3.zero;
@@ -105,8 +110,9 @@ public class EnemyPatrol : MonoBehaviour
 
     void Update()
     {
-        //smoothly rotate toward target angle
-        currentFacingAngle = Mathf.MoveTowardsAngle(currentFacingAngle, targetFacingAngle, turnSpeed * Time.deltaTime);
+        //rotate toward target at slow speed during turn, instant otherwise
+        float speed = (state == PatrolState.Turning) ? slowTurnSpeed : 9999f;
+        currentFacingAngle = Mathf.MoveTowardsAngle(currentFacingAngle, targetFacingAngle, speed * Time.deltaTime);
         float rad = currentFacingAngle * Mathf.Deg2Rad;
         facingDir = new Vector2(Mathf.Cos(rad), Mathf.Sin(rad));
         BuildConeMesh();
@@ -114,39 +120,55 @@ public class EnemyPatrol : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (isWaiting)
+        Vector2 moveAxis = axis == PatrolAxis.Horizontal ? Vector2.right : Vector2.up;
+
+        switch (state)
         {
-            rb.linearVelocity = Vector2.zero; //stop while waiting
-            waitTimer -= Time.fixedDeltaTime;
-            if (waitTimer <= 0f)
-                isWaiting = false;
-            return;
+            case PatrolState.Moving:
+                rb.linearVelocity = moveAxis * direction * this.speed;
+
+                float offset = axis == PatrolAxis.Horizontal
+                    ? rb.position.x - startPosition.x
+                    : rb.position.y - startPosition.y;
+
+                if ((offset >= patrolDistance && direction == 1) ||
+                    (offset <= -patrolDistance && direction == -1))
+                {
+                    rb.linearVelocity = Vector2.zero;
+                    state = PatrolState.WaitBeforeTurn;
+                    stateTimer = waitBeforeTurn;
+                }
+                break;
+
+            case PatrolState.WaitBeforeTurn:
+                rb.linearVelocity = Vector2.zero;
+                stateTimer -= Time.fixedDeltaTime;
+                if (stateTimer <= 0f)
+                {
+                    direction = -direction; //flip direction
+                    Vector2 newDir = moveAxis * direction;
+                    targetFacingAngle = Mathf.Atan2(newDir.y, newDir.x) * Mathf.Rad2Deg;
+                    state = PatrolState.Turning;
+                }
+                break;
+
+            case PatrolState.Turning:
+                rb.linearVelocity = Vector2.zero;
+                //wait until cone finishes rotating (checked via angle closeness)
+                if (Mathf.Abs(Mathf.DeltaAngle(currentFacingAngle, targetFacingAngle)) < 1f)
+                {
+                    state = PatrolState.WaitAfterTurn;
+                    stateTimer = waitAfterTurn;
+                }
+                break;
+
+            case PatrolState.WaitAfterTurn:
+                rb.linearVelocity = Vector2.zero;
+                stateTimer -= Time.fixedDeltaTime;
+                if (stateTimer <= 0f)
+                    state = PatrolState.Moving;
+                break;
         }
-
-        Vector2 moveDir = axis == PatrolAxis.Horizontal ? Vector2.right : Vector2.up;
-
-        float currentOffset = axis == PatrolAxis.Horizontal
-            ? rb.position.x - startPosition.x
-            : rb.position.y - startPosition.y;
-
-        if (currentOffset >= patrolDistance && direction == 1)
-        {
-            direction = -1;
-            isWaiting = true;
-            waitTimer = waitTime; //start wait at far end
-        }
-        else if (currentOffset <= -patrolDistance && direction == -1)
-        {
-            direction = 1;
-            isWaiting = true;
-            waitTimer = waitTime; //start wait at near end
-        }
-
-        rb.linearVelocity = moveDir * direction * speed;
-
-        //set target angle — Update() will rotate smoothly toward it
-        Vector2 targetDir = moveDir * direction;
-        targetFacingAngle = Mathf.Atan2(targetDir.y, targetDir.x) * Mathf.Rad2Deg;
     }
 
     //draw line of sight cone in scene view
@@ -166,7 +188,7 @@ public class EnemyPatrol : MonoBehaviour
         Vector2 leftEdge  = (Vector2)(Quaternion.Euler(0, 0,  halfAngle) * facing) * viewDistance;
         Vector2 rightEdge = (Vector2)(Quaternion.Euler(0, 0, -halfAngle) * facing) * viewDistance;
 
-        Gizmos.color = new Color(1f, 1f, 1f, 0.6f); //white
+        Gizmos.color = new Color(1f, 1f, 1f, 0.6f);
         Gizmos.DrawLine(origin, origin + leftEdge);
         Gizmos.DrawLine(origin, origin + rightEdge);
 
