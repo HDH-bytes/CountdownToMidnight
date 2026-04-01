@@ -7,13 +7,13 @@ public class ChooseCharacterController : MonoBehaviour
     {
         PlayerPrefs.SetInt("SelectedCharacter", 0);
         PlayerPrefs.Save();
-        SceneManager.LoadScene("demo");
+        SceneManager.LoadScene("Level1");
     }
 
     public void ChooseCharacter2()
     {
         PlayerPrefs.SetInt("SelectedCharacter", 1);
         PlayerPrefs.Save();
-        SceneManager.LoadScene("demo");
+        SceneManager.LoadScene("Level1");
     }
 }

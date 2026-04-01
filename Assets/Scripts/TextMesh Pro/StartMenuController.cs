@@ -24,7 +24,7 @@ public class StartMenuController : MonoBehaviour
         PlayerPrefs.Save();
 
         
-        SceneManager.LoadScene("demo");
+        SceneManager.LoadScene("ChooseCharacter");
     }
 
     public void OnExitClick()
