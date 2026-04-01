@@ -1050,7 +1050,7 @@ GameObject:
   - component: {fileID: 211486355}
   - component: {fileID: 211486354}
   m_Layer: 0
-  m_Name: EnemyPatrolL1 (4)
+  m_Name: EnemyPatrolL4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1777,7 +1777,7 @@ GameObject:
   - component: {fileID: 324173009}
   - component: {fileID: 324173008}
   m_Layer: 0
-  m_Name: EnemyPatrolL1 (1)
+  m_Name: EnemyPatrolL2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30341,7 +30341,7 @@ GameObject:
   - component: {fileID: 697500737}
   - component: {fileID: 697500736}
   m_Layer: 0
-  m_Name: EnemyPatrolL1 (5)
+  m_Name: EnemyPatrolL5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32197,7 +32197,7 @@ GameObject:
   - component: {fileID: 774675344}
   - component: {fileID: 774675343}
   m_Layer: 0
-  m_Name: EnemyPatrolL1 (2)
+  m_Name: EnemyPatrolL3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34164,7 +34164,7 @@ GameObject:
   - component: {fileID: 1809364188}
   - component: {fileID: 1809364187}
   m_Layer: 0
-  m_Name: EnemyPatrolL1 (3)
+  m_Name: EnemyPatrolL4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
