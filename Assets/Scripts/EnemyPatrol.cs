@@ -3,8 +3,12 @@ using UnityEngine;
 public class EnemyPatrol : MonoBehaviour
 {
     public enum PatrolAxis { Horizontal, Vertical }
+    public enum HorizontalStart { Right, Left }
+    public enum VerticalStart { Up, Down }
 
     [SerializeField] private PatrolAxis axis = PatrolAxis.Horizontal;
+    [SerializeField] private HorizontalStart horizontalStart = HorizontalStart.Right; //starting direction when horizontal
+    [SerializeField] private VerticalStart verticalStart = VerticalStart.Up; //starting direction when vertical
     [SerializeField] private float patrolDistance = 3f; //how far it goes each direction
     [SerializeField] private float speed = 2f; //movement speed
     [SerializeField] private float waitTime = 0.5f; //time stopped at the edges
@@ -19,6 +23,9 @@ public class EnemyPatrol : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         startPosition = rb.position;
+        direction = axis == PatrolAxis.Horizontal
+            ? (horizontalStart == HorizontalStart.Right ? 1 : -1)
+            : (verticalStart == VerticalStart.Up ? 1 : -1); //set starting direction from inspector
     }
 
     void FixedUpdate()
