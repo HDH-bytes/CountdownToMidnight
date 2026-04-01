@@ -35,6 +35,8 @@ public class EnemyPatrol : MonoBehaviour
 
     private Mesh coneMesh;
     private MeshFilter coneMeshFilter;
+    private Material coneMaterial;
+    private Transform player;
 
     void Start()
     {
@@ -51,6 +53,9 @@ public class EnemyPatrol : MonoBehaviour
         currentFacingAngle = Mathf.Atan2(initialDir.y, initialDir.x) * Mathf.Rad2Deg;
         targetFacingAngle  = currentFacingAngle;
         facingDir = initialDir;
+
+        GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+        if (playerObj != null) player = playerObj.transform;
 
         SetupConeMesh();
         BuildConeMesh();
@@ -70,6 +75,7 @@ public class EnemyPatrol : MonoBehaviour
         Material mat = new Material(Shader.Find("Sprites/Default"));
         mat.color = new Color(1f, 1f, 1f, 0.3f); //light white hue
         mr.material = mat;
+        coneMaterial = mat;
 
         mr.sortingLayerName = "WalkInFront";
         mr.sortingOrder = 0;
@@ -110,12 +116,30 @@ public class EnemyPatrol : MonoBehaviour
 
     void Update()
     {
-        //rotate toward target at slow speed during turn, instant otherwise
+        //rotate toward target at slow speed during turn
         float speed = (state == PatrolState.Turning) ? slowTurnSpeed : 9999f;
         currentFacingAngle = Mathf.MoveTowardsAngle(currentFacingAngle, targetFacingAngle, speed * Time.deltaTime);
         float rad = currentFacingAngle * Mathf.Deg2Rad;
         facingDir = new Vector2(Mathf.Cos(rad), Mathf.Sin(rad));
         BuildConeMesh();
+        UpdateConeColor();
+    }
+
+    bool PlayerInCone()
+    {
+        if (player == null) return false;
+        Vector2 toPlayer = (Vector2)player.position - (Vector2)transform.position;
+        if (toPlayer.magnitude > viewDistance) return false;
+        float angle = Vector2.Angle(facingDir, toPlayer);
+        return angle <= viewAngle / 2f;
+    }
+
+    void UpdateConeColor()
+    {
+        if (coneMaterial == null) return;
+        coneMaterial.color = PlayerInCone()
+            ? new Color(1f, 0.3f, 0.3f, 0.35f)  //light red
+            : new Color(1f, 1f, 1f, 0.3f);       //light white
     }
 
     void FixedUpdate()
@@ -154,7 +178,7 @@ public class EnemyPatrol : MonoBehaviour
 
             case PatrolState.Turning:
                 rb.linearVelocity = Vector2.zero;
-                //wait until cone finishes rotating (checked via angle closeness)
+                //wait until cone finishes rotating
                 if (Mathf.Abs(Mathf.DeltaAngle(currentFacingAngle, targetFacingAngle)) < 1f)
                 {
                     state = PatrolState.WaitAfterTurn;
@@ -171,7 +195,7 @@ public class EnemyPatrol : MonoBehaviour
         }
     }
 
-    //draw line of sight cone in scene view
+    //draw line of sight cone
     void OnDrawGizmos()
     {
         Vector2 origin = (Vector2)transform.position;
