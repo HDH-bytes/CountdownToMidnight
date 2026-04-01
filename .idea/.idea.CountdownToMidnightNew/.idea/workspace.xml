@@ -6,12 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="e0a7728d-6079-42d9-b44a-1f49cd0d40b3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CountdownToMidnightNew/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CountdownToMidnightNew/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChooseCharacterController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ChooseCharacterController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Idle_0.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Idle_0.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/StartScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/StartScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TextMesh Pro/StartMenuController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TextMesh Pro/StartMenuController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/Build Profiles/StartDemo.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/Build Profiles/StartDemo.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player2.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,6 +134,8 @@
       <workItem from="1775000660315" duration="23000" />
       <workItem from="1775000697022" duration="61000" />
       <workItem from="1775001370859" duration="1519000" />
+      <workItem from="1775003753834" duration="19000" />
+      <workItem from="1775003783503" duration="990000" />
     </task>
     <servers />
   </component>

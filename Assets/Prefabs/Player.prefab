@@ -161,7 +161,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -591485823
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -2122837972990275081, guid: ab73375884cddbb4ebef8b8731b977e4, type: 3}
@@ -190,6 +190,7 @@ GameObject:
   - component: {fileID: 8643683459742907953}
   - component: {fileID: 2740462218642257645}
   - component: {fileID: 1542967221275072681}
+  - component: {fileID: -1196785361392433213}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -400,6 +401,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 87a21b56-f241-47d8-aaa2-9b4ddf85f2c4
     m_ActionName: 'Player/Interact[/Keyboard/e]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8a3775dd-23a7-436c-81c7-2aa4991ae84e
+    m_ActionName: 'Player/Look[/Mouse/position]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -524,3 +529,15 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.54030645, y: 0.9494197}
   m_EdgeRadius: 0
+--- !u!114 &-1196785361392433213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3898376022755239336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 726ddf3175ddd7149a5d1a1388ec5253, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraTargetAssigner
