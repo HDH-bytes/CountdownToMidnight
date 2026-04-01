@@ -14,19 +14,22 @@ public class EnemyPatrol : MonoBehaviour
     [SerializeField] private float waitTime = 0.5f; //time stopped at the edges
 
     [Header("Line of Sight")]
-    [SerializeField] private float viewAngle = 70f;   //total cone angle in degrees
-    [SerializeField] private float viewDistance = 5f; //how far the cone reaches
+    [SerializeField] private float viewAngle = 70f;    //total cone angle in degrees
+    [SerializeField] private float viewDistance = 5f;  //how far the cone reaches
+    [SerializeField] private float turnSpeed = 240f;   //degrees per second for the 180 turn
 
     private Rigidbody2D rb;
     private Vector2 startPosition;
     private int direction = 1;
     private float waitTimer = 0f; //tracks remaining wait time
     private bool isWaiting = false;
-    private Vector2 facingDir = Vector2.right; //tracks current facing direction
+    private Vector2 facingDir = Vector2.right; //smoothed facing direction used for cone
+
+    private float currentFacingAngle;
+    private float targetFacingAngle;
 
     private Mesh coneMesh;
     private MeshFilter coneMeshFilter;
-    private Vector2 lastFacingDir;
 
     void Start()
     {
@@ -36,13 +39,16 @@ public class EnemyPatrol : MonoBehaviour
             ? (horizontalStart == HorizontalStart.Right ? 1 : -1)
             : (verticalStart == VerticalStart.Up ? 1 : -1); //set starting direction from inspector
 
-        facingDir = axis == PatrolAxis.Horizontal
+        Vector2 initialDir = axis == PatrolAxis.Horizontal
             ? (direction == 1 ? Vector2.right : Vector2.left)
             : (direction == 1 ? Vector2.up : Vector2.down);
 
+        currentFacingAngle = Mathf.Atan2(initialDir.y, initialDir.x) * Mathf.Rad2Deg;
+        targetFacingAngle  = currentFacingAngle;
+        facingDir = initialDir;
+
         SetupConeMesh();
         BuildConeMesh();
-        lastFacingDir = facingDir;
     }
 
     void SetupConeMesh()
@@ -57,20 +63,11 @@ public class EnemyPatrol : MonoBehaviour
         MeshRenderer mr = coneObj.AddComponent<MeshRenderer>();
 
         Material mat = new Material(Shader.Find("Sprites/Default"));
-        mat.color = new Color(1f, 1f, 1f, 0.3f); //light white hue, semi-transparent
+        mat.color = new Color(1f, 1f, 1f, 0.3f); //light white hue
         mr.material = mat;
 
-        //match the enemy's sorting layer so the cone renders on the same layer, just below the sprite
-        SpriteRenderer sr = GetComponent<SpriteRenderer>();
-        if (sr != null)
-        {
-            mr.sortingLayerID = sr.sortingLayerID;
-            mr.sortingOrder = sr.sortingOrder - 1;
-        }
-        else
-        {
-            mr.sortingOrder = 1;
-        }
+        mr.sortingLayerName = "WalkInFront";
+        mr.sortingOrder = 0;
 
         coneMesh = new Mesh();
         coneMeshFilter.mesh = coneMesh;
@@ -108,11 +105,11 @@ public class EnemyPatrol : MonoBehaviour
 
     void Update()
     {
-        if (facingDir != lastFacingDir)
-        {
-            BuildConeMesh();
-            lastFacingDir = facingDir;
-        }
+        //smoothly rotate toward target angle
+        currentFacingAngle = Mathf.MoveTowardsAngle(currentFacingAngle, targetFacingAngle, turnSpeed * Time.deltaTime);
+        float rad = currentFacingAngle * Mathf.Deg2Rad;
+        facingDir = new Vector2(Mathf.Cos(rad), Mathf.Sin(rad));
+        BuildConeMesh();
     }
 
     void FixedUpdate()
@@ -146,7 +143,10 @@ public class EnemyPatrol : MonoBehaviour
         }
 
         rb.linearVelocity = moveDir * direction * speed;
-        facingDir = moveDir * direction; //update facing as enemy moves
+
+        //set target angle — Update() will rotate smoothly toward it
+        Vector2 targetDir = moveDir * direction;
+        targetFacingAngle = Mathf.Atan2(targetDir.y, targetDir.x) * Mathf.Rad2Deg;
     }
 
     //draw line of sight cone in scene view

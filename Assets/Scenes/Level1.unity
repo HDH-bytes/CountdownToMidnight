@@ -1120,6 +1120,9 @@ MonoBehaviour:
   patrolDistance: 27
   speed: 5
   waitTime: 2
+  viewAngle: 70
+  viewDistance: 5
+  turnSpeed: 240
 --- !u!114 &211486355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1387,6 +1390,9 @@ MonoBehaviour:
   patrolDistance: 27
   speed: 5
   waitTime: 2
+  viewAngle: 70
+  viewDistance: 5
+  turnSpeed: 240
 --- !u!114 &252708491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1847,6 +1853,9 @@ MonoBehaviour:
   patrolDistance: 8
   speed: 5
   waitTime: 2
+  viewAngle: 70
+  viewDistance: 5
+  turnSpeed: 240
 --- !u!114 &324173009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30958,6 +30967,9 @@ MonoBehaviour:
   patrolDistance: 27
   speed: 5
   waitTime: 2
+  viewAngle: 70
+  viewDistance: 5
+  turnSpeed: 240
 --- !u!114 &697500737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32814,6 +32826,9 @@ MonoBehaviour:
   patrolDistance: 9
   speed: 5
   waitTime: 2
+  viewAngle: 70
+  viewDistance: 5
+  turnSpeed: 240
 --- !u!114 &774675344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35585,6 +35600,9 @@ MonoBehaviour:
   patrolDistance: 8
   speed: 5
   waitTime: 2
+  viewAngle: 70
+  viewDistance: 5
+  turnSpeed: 240
 --- !u!114 &1809364188
 MonoBehaviour:
   m_ObjectHideFlags: 0
