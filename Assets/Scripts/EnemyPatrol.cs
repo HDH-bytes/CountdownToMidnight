@@ -21,7 +21,7 @@ public class EnemyPatrol : MonoBehaviour
     [SerializeField] private float viewAngle = 70f;   //total cone angle in degrees
     [SerializeField] private float viewDistance = 5f; //how far the cone reaches
 
-    private enum PatrolState { Moving, WaitBeforeTurn, Turning, WaitAfterTurn }
+    private enum PatrolState { Moving, WaitBeforeTurn, Turning, WaitAfterTurn, PlayerSpotted }
     private PatrolState state = PatrolState.Moving;
 
     private Rigidbody2D rb;
@@ -117,10 +117,14 @@ public class EnemyPatrol : MonoBehaviour
     void Update()
     {
         //rotate toward target at slow speed during turn
-        float speed = (state == PatrolState.Turning) ? slowTurnSpeed : 9999f;
-        currentFacingAngle = Mathf.MoveTowardsAngle(currentFacingAngle, targetFacingAngle, speed * Time.deltaTime);
+        float turnSpd = (state == PatrolState.Turning) ? slowTurnSpeed : 9999f;
+        currentFacingAngle = Mathf.MoveTowardsAngle(currentFacingAngle, targetFacingAngle, turnSpd * Time.deltaTime);
         float rad = currentFacingAngle * Mathf.Deg2Rad;
         facingDir = new Vector2(Mathf.Cos(rad), Mathf.Sin(rad));
+
+        if (state != PatrolState.PlayerSpotted && PlayerInCone())
+            state = PatrolState.PlayerSpotted;
+
         BuildConeMesh();
         UpdateConeColor();
     }
@@ -130,15 +134,14 @@ public class EnemyPatrol : MonoBehaviour
         if (player == null) return false;
         Vector2 toPlayer = (Vector2)player.position - (Vector2)transform.position;
         if (toPlayer.magnitude > viewDistance) return false;
-        float angle = Vector2.Angle(facingDir, toPlayer);
-        return angle <= viewAngle / 2f;
+        return Vector2.Angle(facingDir, toPlayer) <= viewAngle / 2f;
     }
 
     void UpdateConeColor()
     {
         if (coneMaterial == null) return;
-        coneMaterial.color = PlayerInCone()
-            ? new Color(1f, 0.3f, 0.3f, 0.35f)  //light red
+        coneMaterial.color = (state == PatrolState.PlayerSpotted)
+            ? new Color(1f, 0.3f, 0.3f, 0.35f)  //light red — stays red once spotted
             : new Color(1f, 1f, 1f, 0.3f);       //light white
     }
 
@@ -191,6 +194,10 @@ public class EnemyPatrol : MonoBehaviour
                 stateTimer -= Time.fixedDeltaTime;
                 if (stateTimer <= 0f)
                     state = PatrolState.Moving;
+                break;
+
+            case PatrolState.PlayerSpotted:
+                rb.linearVelocity = Vector2.zero; //stop and stay stopped
                 break;
         }
     }
