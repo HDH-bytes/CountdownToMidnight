@@ -123,7 +123,10 @@ public class EnemyPatrol : MonoBehaviour
         facingDir = new Vector2(Mathf.Cos(rad), Mathf.Sin(rad));
 
         if (state != PatrolState.PlayerSpotted && PlayerInCone())
+        {
             state = PatrolState.PlayerSpotted;
+            GameOverScreen.Show();
+        }
 
         BuildConeMesh();
         UpdateConeColor();
