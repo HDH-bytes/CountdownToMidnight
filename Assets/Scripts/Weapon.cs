@@ -22,7 +22,7 @@ public abstract class Weapon : MonoBehaviour
     protected float nextFireTime = 0f;
 
     //called by Character.Attack(), every weapon must implement this
-    public abstract void UseWeapon(Character user);
+    public abstract void UseWeapon();
 
     //if ready to fire then true
     public virtual bool CanUse()
