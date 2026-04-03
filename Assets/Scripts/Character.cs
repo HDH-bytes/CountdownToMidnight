@@ -35,7 +35,7 @@ public abstract class Character : MonoBehaviour, IDamageable
     public virtual void Attack()
     {
         if (currentWeapon != null)
-            currentWeapon.UseWeapon(this);
+            currentWeapon.UseWeapon();
     }
  
     protected virtual void Die()
