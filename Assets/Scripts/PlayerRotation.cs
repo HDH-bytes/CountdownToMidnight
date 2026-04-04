@@ -3,11 +3,11 @@ using UnityEngine.InputSystem;
 
 public class PlayerRotation : Rotator
 {    
-    private Camera mainCam;
+    private Camera _mainCam;
 
     private void Start()
     {
-        mainCam = Camera.main;
+        _mainCam = Camera.main;
     }
 
     // 1. Made public so the Inspector can see it
@@ -18,7 +18,7 @@ public class PlayerRotation : Rotator
         Vector2 mouseScreenPosition = context.ReadValue<Vector2>();
 
         // The rest of your logic remains exactly the same!
-        Vector3 mouseWorldPosition = mainCam.ScreenToWorldPoint(mouseScreenPosition);
+        Vector3 mouseWorldPosition = _mainCam.ScreenToWorldPoint(mouseScreenPosition);
         mouseWorldPosition.z = 0f; 
 
         LookAt(mouseWorldPosition);
