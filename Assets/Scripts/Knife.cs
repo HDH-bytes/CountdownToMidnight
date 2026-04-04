@@ -21,16 +21,16 @@ public class Knife : Weapon
     }
 
     // in melee range
-    public override void UseWeapon(Character c)
+    public override void UseWeapon()
     {
         if (!CanUse()) return;
 
         nextFireTime = Time.time + (1f / fireRate);
 
-        Collider2D[] hits = Physics2D.OverlapCircleAll(c.transform.position, range);
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, range);
         foreach (Collider2D hit in hits)
         {
-            if (hit.gameObject == c.gameObject) continue;
+            if (hit.gameObject == gameObject) continue;
 
             IDamageable target = hit.GetComponent<IDamageable>();
             if (target != null)

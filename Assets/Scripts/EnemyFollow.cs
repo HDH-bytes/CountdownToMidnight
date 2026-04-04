@@ -2,9 +2,12 @@ using UnityEngine;
 
 public class EnemyFollow : MonoBehaviour
 {
-    public Transform player;
+    private Transform player;
     public float speed = 3f;
-
+    void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+    }
     void Update()
     {
         if (player != null)
