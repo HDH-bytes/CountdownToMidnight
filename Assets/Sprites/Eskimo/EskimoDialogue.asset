@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EskimoDialogue
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
   npcName: Eskimo
-  npcPortrait: {fileID: -7527145504033472756, guid: d25cb3bd1ede48a4480100a1eb5fa874, type: 3}
+  npcPortrait: {fileID: -7527145504033472756, guid: 12fbb387d88e7b841bc10b33a598a8ed, type: 3}
   dialogueLines:
   - I saw some rioters between here and the safe zone
   - They looked very dangerous so I'd keep an eye out
