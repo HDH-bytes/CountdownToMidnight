@@ -1,12 +1,12 @@
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class FinishPoint : MonoBehaviour
 {
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter(Collider other)
     {
-        if (collision.CompareTag("Player"))
+        if (other.name == "Player" || other.name == "Player2")
         {
-            SceneController.instance.NextLevel();
+            SceneManager.LoadScene("Level2");
         }
     }
 }
