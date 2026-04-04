@@ -6,9 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="e0a7728d-6079-42d9-b44a-1f49cd0d40b3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CountdownToMidnightNew/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CountdownToMidnightNew/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player2.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/newSceneH.scenetemplate" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/newSceneH.scenetemplate" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level5.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level5.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Main Character 3.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,7 +145,12 @@
       <workItem from="1775019932261" duration="3000" />
       <workItem from="1775020235179" duration="11000" />
       <workItem from="1775020281003" duration="3000" />
+<<<<<<< Updated upstream
       <workItem from="1775328035791" duration="24000" />
+=======
+      <workItem from="1775333745117" duration="16000" />
+      <workItem from="1775333785695" duration="712000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>
