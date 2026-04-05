@@ -310,6 +310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 726ddf3175ddd7149a5d1a1388ec5253, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraTargetAssigner
+  cineCam: {fileID: 0}
 --- !u!61 &1217227085
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -344,7 +345,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.022074163, y: -0.043406636}
+  m_Offset: {x: 0.012852669, y: -0.05262804}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -354,7 +355,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.54030645, y: 0.9494197}
+  m_Size: {x: 0.44809532, y: 0.7834387}
   m_EdgeRadius: 0
 --- !u!1839735485 &1217227086
 Tilemap:
