@@ -122,6 +122,8 @@ Transform:
   m_Children:
   - {fileID: 1027204265283291533}
   - {fileID: 548585324914164529}
+  - {fileID: 534224465330533039}
+  - {fileID: 7426528109538557096}
   m_Father: {fileID: 6096322883844596849}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8254341043332265926
@@ -165,7 +167,6 @@ Transform:
   m_Children:
   - {fileID: 6290596695014092307}
   - {fileID: 1352318152854779469}
-  - {fileID: 7426528109538557096}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8019313518165379072
@@ -507,6 +508,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 726ddf3175ddd7149a5d1a1388ec5253, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraTargetAssigner
+  cineCam: {fileID: 0}
 --- !u!114 &5099402529932666816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -532,7 +534,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7161ca2af5fef05449e6c7ab8afb56aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAttack
-  activeWeapon: {fileID: 7432840548465534432}
+  activeWeapon: {fileID: 2982043929037631682}
 --- !u!1 &8372033599676334429
 GameObject:
   m_ObjectHideFlags: 0
@@ -713,7 +715,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 6096322883844596849}
+    m_TransformParent: {fileID: 1352318152854779469}
     m_Modifications:
     - target: {fileID: 3024548385087885279, guid: 72e0036d824898c48af32c47b95d75f3, type: 3}
       propertyPath: m_SortingLayer
@@ -726,6 +728,10 @@ PrefabInstance:
     - target: {fileID: 4433212565659353661, guid: 72e0036d824898c48af32c47b95d75f3, type: 3}
       propertyPath: m_Name
       value: Sniper
+      objectReference: {fileID: 0}
+    - target: {fileID: 4433212565659353661, guid: 72e0036d824898c48af32c47b95d75f3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7195314785113815175, guid: 72e0036d824898c48af32c47b95d75f3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -777,17 +783,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7195314785113815175, guid: 72e0036d824898c48af32c47b95d75f3, type: 3}
   m_PrefabInstance: {fileID: 345289924773970991}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7432840548465534432 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7200259932208554447, guid: 72e0036d824898c48af32c47b95d75f3, type: 3}
-  m_PrefabInstance: {fileID: 345289924773970991}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f0314a513a21ff418740cea2a073222, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Gun
 --- !u!1001 &2980960464467430961
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -854,3 +849,76 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3369405889211583744, guid: c27393b50ce7a024d91f62ca9eadda84, type: 3}
   m_PrefabInstance: {fileID: 2980960464467430961}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3553891391519972695
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1352318152854779469}
+    m_Modifications:
+    - target: {fileID: 3906880606184976376, guid: c5a563fa06fcda64aad331c0867f8355, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3906880606184976376, guid: c5a563fa06fcda64aad331c0867f8355, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3906880606184976376, guid: c5a563fa06fcda64aad331c0867f8355, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3906880606184976376, guid: c5a563fa06fcda64aad331c0867f8355, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3906880606184976376, guid: c5a563fa06fcda64aad331c0867f8355, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.38268343
+      objectReference: {fileID: 0}
+    - target: {fileID: 3906880606184976376, guid: c5a563fa06fcda64aad331c0867f8355, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.92387956
+      objectReference: {fileID: 0}
+    - target: {fileID: 3906880606184976376, guid: c5a563fa06fcda64aad331c0867f8355, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3906880606184976376, guid: c5a563fa06fcda64aad331c0867f8355, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3906880606184976376, guid: c5a563fa06fcda64aad331c0867f8355, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 3906880606184976376, guid: c5a563fa06fcda64aad331c0867f8355, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 8832562908572972693, guid: c5a563fa06fcda64aad331c0867f8355, type: 3}
+      propertyPath: m_Name
+      value: Knife
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c5a563fa06fcda64aad331c0867f8355, type: 3}
+--- !u!4 &534224465330533039 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3906880606184976376, guid: c5a563fa06fcda64aad331c0867f8355, type: 3}
+  m_PrefabInstance: {fileID: 3553891391519972695}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2982043929037631682 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1743926885814381973, guid: c5a563fa06fcda64aad331c0867f8355, type: 3}
+  m_PrefabInstance: {fileID: 3553891391519972695}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 920bdfdfa39f47e4d92954bc83e265ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MeleeWeapon
