@@ -2,32 +2,21 @@ using UnityEngine;
 
 public class EnemyFollow : MonoBehaviour
 {
-    public float speed = 5f;
-    private Transform _player;
-    private Rigidbody2D _rb;
-
+    private Transform player;
+    public float speed = 3f;
     void Start()
     {
-        _rb = GetComponent<Rigidbody2D>();
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
-
     void Update()
     {
-        if (_player == null)
+        if (player != null)
         {
-            GameObject p = GameObject.FindGameObjectWithTag("Player");
-            if (p != null)
-            {
-                _player = p.transform;
-            }
-            return;
+            transform.position = Vector3.MoveTowards(
+                transform.position,
+                player.position,
+                speed * Time.deltaTime
+            );
         }
-    }
-
-    void FixedUpdate()
-    {
-        
-        Vector2 direction = (_player.position - transform.position).normalized;
-        _rb.linearVelocity = direction * speed;
     }
 }

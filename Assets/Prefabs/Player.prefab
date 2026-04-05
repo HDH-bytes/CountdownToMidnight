@@ -32,7 +32,6 @@ Transform:
   - {fileID: 6035260057117528704}
   - {fileID: 1800170616722731363}
   - {fileID: 7675382394965222478}
-  - {fileID: 7894840269567237579}
   m_Father: {fileID: 8918381429978617090}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2475965021038236713
@@ -603,7 +602,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 726ddf3175ddd7149a5d1a1388ec5253, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraTargetAssigner
-  cineCam: {fileID: 0}
 --- !u!114 &6574655684119606439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -629,7 +627,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7161ca2af5fef05449e6c7ab8afb56aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAttack
-  activeWeapon: {fileID: 4871681008904019878}
+  activeWeapon: {fileID: 0}
 --- !u!1 &7056790188079942200
 GameObject:
   m_ObjectHideFlags: 0
@@ -732,10 +730,6 @@ PrefabInstance:
     - target: {fileID: 4433212565659353661, guid: 72e0036d824898c48af32c47b95d75f3, type: 3}
       propertyPath: m_Name
       value: Sniper
-      objectReference: {fileID: 0}
-    - target: {fileID: 4433212565659353661, guid: 72e0036d824898c48af32c47b95d75f3, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7195314785113815175, guid: 72e0036d824898c48af32c47b95d75f3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -856,77 +850,4 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 3369405889211583744, guid: c27393b50ce7a024d91f62ca9eadda84, type: 3}
   m_PrefabInstance: {fileID: 3907424006835960931}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &6604559999392133683
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 5630775181006556730}
-    m_Modifications:
-    - target: {fileID: 3906880606184976376, guid: c5a563fa06fcda64aad331c0867f8355, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.85
-      objectReference: {fileID: 0}
-    - target: {fileID: 3906880606184976376, guid: c5a563fa06fcda64aad331c0867f8355, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3906880606184976376, guid: c5a563fa06fcda64aad331c0867f8355, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3906880606184976376, guid: c5a563fa06fcda64aad331c0867f8355, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3906880606184976376, guid: c5a563fa06fcda64aad331c0867f8355, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.38268343
-      objectReference: {fileID: 0}
-    - target: {fileID: 3906880606184976376, guid: c5a563fa06fcda64aad331c0867f8355, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.92387956
-      objectReference: {fileID: 0}
-    - target: {fileID: 3906880606184976376, guid: c5a563fa06fcda64aad331c0867f8355, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3906880606184976376, guid: c5a563fa06fcda64aad331c0867f8355, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3906880606184976376, guid: c5a563fa06fcda64aad331c0867f8355, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
-      objectReference: {fileID: 0}
-    - target: {fileID: 3906880606184976376, guid: c5a563fa06fcda64aad331c0867f8355, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 45
-      objectReference: {fileID: 0}
-    - target: {fileID: 8832562908572972693, guid: c5a563fa06fcda64aad331c0867f8355, type: 3}
-      propertyPath: m_Name
-      value: Knife
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: c5a563fa06fcda64aad331c0867f8355, type: 3}
---- !u!114 &4871681008904019878 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1743926885814381973, guid: c5a563fa06fcda64aad331c0867f8355, type: 3}
-  m_PrefabInstance: {fileID: 6604559999392133683}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 920bdfdfa39f47e4d92954bc83e265ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MeleeWeapon
---- !u!4 &7894840269567237579 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3906880606184976376, guid: c5a563fa06fcda64aad331c0867f8355, type: 3}
-  m_PrefabInstance: {fileID: 6604559999392133683}
   m_PrefabAsset: {fileID: 0}
