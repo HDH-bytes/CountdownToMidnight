@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 public class ShopKeeper : MonoBehaviour
 {
@@ -14,6 +13,7 @@ public class ShopKeeper : MonoBehaviour
     public float speedIncrease = 2f;
 
     private PlayerMovement _playerMovement;
+    private bool _upgradeBought;  //one pick locks both options
 
     private void Start()
     {
@@ -24,12 +24,13 @@ public class ShopKeeper : MonoBehaviour
         closeButton.onClick.AddListener(CloseShop);
     }
 
-    //called when the player's trigger collider enters thes collider range
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.CompareTag("Player")) return;
 
         _playerMovement = other.GetComponent<PlayerMovement>();
+        speedButton.interactable = !_upgradeBought;
+        healthButton.interactable = !_upgradeBought;
         shopPanel.SetActive(true);
     }
 
@@ -46,12 +47,20 @@ public class ShopKeeper : MonoBehaviour
         if (_playerMovement != null)
             _playerMovement.IncreaseSpeed(speedIncrease);
 
-        CloseShop();
+        LockShop();
     }
 
     private void UpgradeHealth()
     {
         // Teammate is implementing health
+        LockShop();
+    }
+
+    private void LockShop()
+    {
+        _upgradeBought = true;
+        speedButton.interactable = false;
+        healthButton.interactable = false;
         CloseShop();
     }
 
