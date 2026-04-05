@@ -28,9 +28,17 @@ public class Level4Timer : MonoBehaviour
     {
         timeRemaining = startTime;
 
-        // Safety: make sure the panel is hidden at the start
+        // Safety: wire the button in code dynamically, bypassing Inspector bugs
         if (timeOutPanel != null)
-            timeOutPanel.SetActive(false);
+        {
+            Button btn = timeOutPanel.GetComponentInChildren<Button>(true);
+            if (btn != null)
+            {
+                btn.onClick.RemoveAllListeners();
+                btn.onClick.AddListener(OnRetry);
+            }
+            timeOutPanel.SetActive(false); // Make sure the panel starts hidden
+        }
     }
 
     void Update()

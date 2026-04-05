@@ -13,7 +13,7 @@ using TMPro;
 /// </summary>
 public static class Level4TimerSetup
 {
-    [MenuItem("Tools/Setup Level4 Timer UI")]
+    // [MenuItem("Tools/Setup Level4 Timer UI")]
     public static void SetupLevel4TimerUI()
     {
         // ── Guard: must be in Level4 ──────────────────────────────────────────
