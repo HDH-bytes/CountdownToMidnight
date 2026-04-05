@@ -20474,7 +20474,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BossAI
   maxHealth: 3
-  moveSpeed: 3
+  currentHealth: 3
+  speed: 0
+  currentWeapon: {fileID: 0}
   attackRange: 1.5
   detectionRange: 10
 --- !u!4 &984019833
