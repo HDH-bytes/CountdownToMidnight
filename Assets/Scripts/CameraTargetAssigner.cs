@@ -1,16 +1,22 @@
 using UnityEngine;
-using Unity.Cinemachine; 
+using Unity.Cinemachine;
 
 public class CameraTargetAssigner : MonoBehaviour
 {
-    void Start()
-    {
-        // 1. Find your Cinemachine camera in the scene
-        CinemachineCamera cineCam = Object.FindFirstObjectByType<CinemachineCamera>();
+    [SerializeField] private CinemachineCamera cineCam;
 
-        if (cineCam != null)
+    private void Start()
+    {
+        if (cineCam == null)
+            cineCam = FindFirstObjectByType<CinemachineCamera>();
+
+        if (cineCam == null)
         {
-            cineCam.Target.TrackingTarget = this.transform;
+            Debug.LogError("No active CinemachineCamera found.");
+            return;
         }
+
+        cineCam.Target.TrackingTarget = transform;
+        Debug.Log("Camera now tracking: " + gameObject.name);
     }
 }

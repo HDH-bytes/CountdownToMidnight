@@ -2,23 +2,23 @@ using UnityEngine;
 
 public class BossAI : MonoBehaviour
 {
-   
     private Transform player; 
 
-    
     public int maxHealth = 3;
     private int currentHealth;
     public float moveSpeed = 3f;
     public float attackRange = 1.5f;
     public float detectionRange = 7f; 
 
-    
     private Animator animator;
     private Collider2D bossCollider;
     
     // State Tracking
     private bool isDead = false;
     private bool isAttacking = false;
+
+    // --- NEW: WAKE UP SYSTEM ---
+    public bool isAwake = false;
 
     void Start()
     {
@@ -27,9 +27,21 @@ public class BossAI : MonoBehaviour
         currentHealth = maxHealth;
     }
 
+    // --- NEW: THE START BATTLE COMMAND ---
+    // This is exactly what the BattleTrigger script is looking for!
+    public void StartBattle()
+    {
+        isAwake = true;
+        Debug.Log("The Boss has woken up!");
+    }
+
     void Update()
     {
         if (isDead) return;
+
+        // --- NEW: SLEEP SHIELD ---
+        // If the trigger hasn't woken the boss up yet, freeze its brain!
+        if (!isAwake) return; 
 
         FindClosestPlayer();
 
@@ -38,7 +50,6 @@ public class BossAI : MonoBehaviour
             animator.SetBool("isWalking", false);
             return;
         }
-
         
         float distanceToPlayer = Vector2.Distance(transform.position, player.position);
 
@@ -133,7 +144,6 @@ public class BossAI : MonoBehaviour
 
         Debug.Log("Boss Defeated!");
     }
-
 
     void OnDrawGizmosSelected()
     {

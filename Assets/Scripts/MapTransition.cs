@@ -1,23 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.Cinemachine;
 using UnityEngine;
+using Unity.Cinemachine;
 
-public class MapTransation : MonoBehaviour
+public class MapTransition : MonoBehaviour
 {
-    [SerializeField] PolygonCollider2D mapBoundry;
-    CinemachineConfiner confiner;
+    [SerializeField] private PolygonCollider2D mapBoundary;
+    private CinemachineConfiner2D confiner;
 
     private void Awake()
     {
-        confiner = FindObjectOfType<CinemachineConfiner>();
+        confiner = FindFirstObjectByType<CinemachineConfiner2D>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.CompareTag("Player") && confiner != null)
         {
-            confiner.m_BoundingShape2D = mapBoundry;
+            confiner.BoundingShape2D = mapBoundary;
+            confiner.InvalidateBoundingShapeCache();
         }
     }
 }
