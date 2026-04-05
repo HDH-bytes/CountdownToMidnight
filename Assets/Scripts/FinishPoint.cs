@@ -4,9 +4,19 @@ public class FinishPoint : MonoBehaviour
 {
     void OnTriggerEnter(Collider other)
     {
-        if (other.name == "Player" || other.name == "Player2")
+        if (other.CompareTag("Player"))
         {
-            SceneManager.LoadScene("Level2");
-        }
+            int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+            int nextSceneIndex = currentSceneIndex + 1;
+
+            if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
+            {
+                SceneManager.LoadScene(nextSceneIndex);
+            }
+            else
+            {
+                Debug.Log("No more levels!");
+                SceneManager.LoadScene(0);
+            }
     }
 }
