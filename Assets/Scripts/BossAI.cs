@@ -1,16 +1,16 @@
 using UnityEngine;
 
-public class BossAI : MonoBehaviour
+// 1. Inherit from Character instead of MonoBehaviour
+public class BossAI : Character
 {
     [Header("Targeting")]
     private Transform player; 
 
-    [Header("Stats")]
-    public int maxHealth = 3;
-    private int currentHealth;
-    public float moveSpeed = 3f;
+    [Header("Boss Specific Stats")]
+    // maxHealth, currentHealth, and speed are now inherited from Character!
+    // We just need the attack and detection ranges here.
     public float attackRange = 1.5f;
-    public float detectionRange = 7f; // New: How close the player needs to be to wake the boss up
+    public float detectionRange = 7f; 
 
     [Header("Components")]
     private Animator animator;
@@ -20,22 +20,26 @@ public class BossAI : MonoBehaviour
     private bool isDead = false;
     private bool isAttacking = false;
 
-    void Start()
+    // 2. Use protected override to hook into Character's Start method
+    protected override void Start()
     {
+        // Call base.Start() to initialize currentHealth = maxHealth
+        base.Start(); 
+
+        // Since we removed moveSpeed, make sure the inherited 'speed' has a value
+        if (speed == 0f) speed = 3f;
+        if (maxHealth == 0) maxHealth = 3;
+
         animator = GetComponent<Animator>();
         bossCollider = GetComponent<Collider2D>();
-        currentHealth = maxHealth;
     }
 
     void Update()
     {
-        // 1. If the boss is dead, stop running logic entirely
         if (isDead) return;
 
-        // 2. Constantly scan the arena to find the closest player
         FindClosestPlayer();
 
-        // 3. If there are NO players currently in the scene, stand still and wait
         if (player == null) 
         {
             animator.SetBool("isWalking", false);
@@ -43,13 +47,10 @@ public class BossAI : MonoBehaviour
         }
 
         // --- Standard Combat & Movement Logic ---
-        
-        // Calculate distance to whoever won the "closest player" check
         float distanceToPlayer = Vector2.Distance(transform.position, player.position);
 
         if (distanceToPlayer <= attackRange)
         {
-            // Inside Attack Range: Stop walking and swing!
             animator.SetBool("isWalking", false);
             
             if (!isAttacking)
@@ -59,19 +60,17 @@ public class BossAI : MonoBehaviour
         }
         else if (distanceToPlayer <= detectionRange && !isAttacking) 
         {
-            // Inside Detection Range, but outside Attack Range: Chase them!
             animator.SetBool("isWalking", true);
-            transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
+            
+            // 3. Replaced 'moveSpeed' with the inherited 'speed' variable
+            transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
 
-            // Flip the boss sprite to face the player's X direction
-            if (player.position.x < transform.position.x)
-                transform.localScale = new Vector3(-1, 1, 1); 
-            else
-                transform.localScale = new Vector3(1, 1, 1);
+            Vector2 direction = (player.position - transform.position).normalized;
+            animator.SetFloat("MoveX", direction.x);
+            animator.SetFloat("MoveY", direction.y);
         }
         else 
         {
-            // Outside Detection Range: Player is too far away, stand still.
             animator.SetBool("isWalking", false);
         }
     }
@@ -79,13 +78,11 @@ public class BossAI : MonoBehaviour
     // --- The Target-Finding Algorithm ---
     void FindClosestPlayer()
     {
-        // Find every GameObject in the scene right now with the "Player" tag
         GameObject[] allPlayers = GameObject.FindGameObjectsWithTag("Player");
 
         float closestDistance = Mathf.Infinity; 
         Transform closestTarget = null;
 
-        // Loop through the array to find the shortest distance
         foreach (GameObject p in allPlayers)
         {
             float distanceToP = Vector2.Distance(transform.position, p.transform.position);
@@ -97,7 +94,6 @@ public class BossAI : MonoBehaviour
             }
         }
 
-        // Assign the winner as the boss's current target
         player = closestTarget;
     }
 
@@ -109,7 +105,6 @@ public class BossAI : MonoBehaviour
         
         Debug.Log("Boss swings at the closest player!");
 
-        // Prevents the boss from moving or attacking again for 1 second.
         Invoke("ResetAttack", 1f); 
     }
 
@@ -121,21 +116,20 @@ public class BossAI : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int damage)
+    // 4. Override TakeDamage to prevent taking damage after death, 
+    // but let the base Character class handle the actual health subtraction.
+    public override void TakeDamage(int amount)
     {
         if (isDead) return;
-
-        currentHealth -= damage;
-        Debug.Log("Boss took damage! Health remaining: " + currentHealth);
-
-        if (currentHealth <= 0)
-        {
-            Die();
-        }
+        
+        // This calls the math and Debug.Logs from Character.cs
+        base.TakeDamage(amount); 
     }
 
-    void Die()
+    // 5. Override Die so the Boss plays an animation instead of getting Destroyed instantly.
+    protected override void Die()
     {
+        if (isDead) return;
         isDead = true;
         
         animator.SetBool("isWalking", false);
@@ -147,17 +141,19 @@ public class BossAI : MonoBehaviour
         }
 
         Debug.Log("Boss Defeated!");
+        
+        // Note: We intentionally DO NOT call base.Die() here.
+        // base.Die() calls Destroy(gameObject). Since we want the death animation 
+        // to play out, we skip calling it. If you want the body to disappear later, 
+        // you can add: Destroy(gameObject, 3f);
     }
 
     // --- Editor Visualization ---
-    // This draws visible circles in the Unity Editor Scene view to help you balance the game ranges
     void OnDrawGizmosSelected()
     {
-        // Draw a yellow circle for the Detection Range
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, detectionRange);
 
-        // Draw a red circle for the Attack Range
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRange);
     }
