@@ -5,13 +5,13 @@ public class EnemyPatrol : MonoBehaviour
     public enum PatrolAxis { Horizontal, Vertical }
 
     [SerializeField] private PatrolAxis axis = PatrolAxis.Horizontal;
-    [SerializeField] private bool reverseStart = false;   // start moving left/down instead of right/up
+    [SerializeField] private bool reverseStart = false;   //start moving left/down instead of right/up
     [SerializeField] private float patrolDistance = 3f;
     [SerializeField] private float speed = 2f;
 
     [Header("Turn Behaviour")]
     [SerializeField] private float waitBeforeTurn = 0.5f;
-    [SerializeField] private float turnSpeed = 80f;       // degrees per second
+    [SerializeField] private float turnSpeed = 80f;       //degrees per second
     [SerializeField] private float waitAfterTurn = 0.3f;
 
     [Header("Line of Sight")]
@@ -23,12 +23,12 @@ public class EnemyPatrol : MonoBehaviour
 
     private Rigidbody2D rb;
     private Vector2 startPosition;
-    private int direction;        // 1 = right/up, -1 = left/down
+    private int direction;        //1 = right/up, -1 = left/down
     private float stateTimer;
 
-    private float facingAngle;    // current angle in degrees
-    private float targetAngle;    // angle we're rotating toward
-    private Vector2 facingDir;    // unit vector from facingAngle
+    private float facingAngle;    //current angle in degrees
+    private float targetAngle;    //angle we're rotating toward
+    private Vector2 facingDir;    //unit vector from facingAngle
 
     private Mesh coneMesh;
     private MeshFilter coneMeshFilter;
@@ -58,7 +58,7 @@ public class EnemyPatrol : MonoBehaviour
         ? (direction == 1 ? Vector2.right : Vector2.left)
         : (direction == 1 ? Vector2.up    : Vector2.down);
 
-    // returns the axis vector (no direction applied)
+    // returns the axis vector
     Vector2 GetMoveAxis() => axis == PatrolAxis.Horizontal ? Vector2.right : Vector2.up;
 
     void SetupConeMesh()
@@ -195,7 +195,7 @@ public class EnemyPatrol : MonoBehaviour
         }
     }
 
-    //draws the vision cone outline in the scene view
+    //draws the vision cone 
     void OnDrawGizmos()
     {
         Vector2 origin = transform.position;
@@ -219,7 +219,7 @@ public class EnemyPatrol : MonoBehaviour
         }
     }
 
-    // draws patrol range when the object is selected
+    // draws patrol range 
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
