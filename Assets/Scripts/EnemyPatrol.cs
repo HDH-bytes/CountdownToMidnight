@@ -3,35 +3,32 @@ using UnityEngine;
 public class EnemyPatrol : MonoBehaviour
 {
     public enum PatrolAxis { Horizontal, Vertical }
-    public enum HorizontalStart { Right, Left }
-    public enum VerticalStart { Up, Down }
 
     [SerializeField] private PatrolAxis axis = PatrolAxis.Horizontal;
-    [SerializeField] private HorizontalStart horizontalStart = HorizontalStart.Right; //starting direction when horizontal
-    [SerializeField] private VerticalStart verticalStart = VerticalStart.Up; //starting direction when vertical
-    [SerializeField] private float patrolDistance = 3f; //how far it goes each direction
-    [SerializeField] private float speed = 2f; //movement speed
+    [SerializeField] private bool reverseStart = false;   // start moving left/down instead of right/up
+    [SerializeField] private float patrolDistance = 3f;
+    [SerializeField] private float speed = 2f;
 
     [Header("Turn Behaviour")]
-    [SerializeField] private float waitBeforeTurn = 0.5f; //pause before rotating
-    [SerializeField] private float slowTurnSpeed = 80f;   //degrees per second during deliberate turn
-    [SerializeField] private float waitAfterTurn = 0.3f;  //pause after rotating before walking
+    [SerializeField] private float waitBeforeTurn = 0.5f;
+    [SerializeField] private float turnSpeed = 80f;       // degrees per second
+    [SerializeField] private float waitAfterTurn = 0.3f;
 
     [Header("Line of Sight")]
-    [SerializeField] private float viewAngle = 70f;   //total cone angle in degrees
-    [SerializeField] private float viewDistance = 5f; //how far the cone reaches
+    [SerializeField] private float viewAngle = 70f;
+    [SerializeField] private float viewDistance = 5f;
 
-    private enum PatrolState { Moving, WaitBeforeTurn, Turning, WaitAfterTurn, PlayerSpotted }
-    private PatrolState state = PatrolState.Moving;
+    private enum State { Moving, WaitBeforeTurn, Turning, WaitAfterTurn, PlayerSpotted }
+    private State state = State.Moving;
 
     private Rigidbody2D rb;
     private Vector2 startPosition;
-    private int direction = 1;
-    private float stateTimer = 0f;
-    private Vector2 facingDir = Vector2.right; //smoothed facing direction used for cone
+    private int direction;        // 1 = right/up, -1 = left/down
+    private float stateTimer;
 
-    private float currentFacingAngle;
-    private float targetFacingAngle;
+    private float facingAngle;    // current angle in degrees
+    private float targetAngle;    // angle we're rotating toward
+    private Vector2 facingDir;    // unit vector from facingAngle
 
     private Mesh coneMesh;
     private MeshFilter coneMeshFilter;
@@ -42,16 +39,11 @@ public class EnemyPatrol : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         startPosition = rb.position;
-        direction = axis == PatrolAxis.Horizontal
-            ? (horizontalStart == HorizontalStart.Right ? 1 : -1)
-            : (verticalStart == VerticalStart.Up ? 1 : -1);
+        direction = reverseStart ? -1 : 1;
 
-        Vector2 initialDir = axis == PatrolAxis.Horizontal
-            ? (direction == 1 ? Vector2.right : Vector2.left)
-            : (direction == 1 ? Vector2.up : Vector2.down);
-
-        currentFacingAngle = Mathf.Atan2(initialDir.y, initialDir.x) * Mathf.Rad2Deg;
-        targetFacingAngle  = currentFacingAngle;
+        Vector2 initialDir = GetMoveDir();
+        facingAngle = Mathf.Atan2(initialDir.y, initialDir.x) * Mathf.Rad2Deg;
+        targetAngle = facingAngle;
         facingDir = initialDir;
 
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
@@ -61,22 +53,28 @@ public class EnemyPatrol : MonoBehaviour
         BuildConeMesh();
     }
 
+    // returns the direction vector the enemy is currently moving
+    Vector2 GetMoveDir() => axis == PatrolAxis.Horizontal
+        ? (direction == 1 ? Vector2.right : Vector2.left)
+        : (direction == 1 ? Vector2.up    : Vector2.down);
+
+    // returns the axis vector (no direction applied)
+    Vector2 GetMoveAxis() => axis == PatrolAxis.Horizontal ? Vector2.right : Vector2.up;
+
     void SetupConeMesh()
     {
         GameObject coneObj = new GameObject("VisionCone");
         coneObj.transform.SetParent(transform);
         coneObj.transform.localPosition = Vector3.zero;
         coneObj.transform.localRotation = Quaternion.identity;
-        coneObj.transform.localScale = Vector3.one;
+        coneObj.transform.localScale    = Vector3.one;
 
         coneMeshFilter = coneObj.AddComponent<MeshFilter>();
         MeshRenderer mr = coneObj.AddComponent<MeshRenderer>();
 
-        Material mat = new Material(Shader.Find("Sprites/Default"));
-        mat.color = new Color(1f, 1f, 1f, 0.3f); //light white hue
-        mr.material = mat;
-        coneMaterial = mat;
-
+        coneMaterial = new Material(Shader.Find("Sprites/Default"));
+        coneMaterial.color = new Color(1f, 1f, 1f, 0.3f);
+        mr.material = coneMaterial;
         mr.sortingLayerName = "WalkInFront";
         mr.sortingOrder = 0;
 
@@ -89,155 +87,139 @@ public class EnemyPatrol : MonoBehaviour
         int segments = 24;
         float halfAngle = viewAngle / 2f;
 
-        Vector3[] vertices = new Vector3[segments + 2];
-        int[] triangles = new int[segments * 3];
+        Vector3[] verts = new Vector3[segments + 2];
+        int[]     tris  = new int[segments * 3];
 
-        vertices[0] = Vector3.zero;
-
+        verts[0] = Vector3.zero;
         for (int i = 0; i <= segments; i++)
         {
-            float angle = -halfAngle + (viewAngle / segments) * i;
-            Vector2 dir = Quaternion.Euler(0, 0, angle) * facingDir;
-            vertices[i + 1] = new Vector3(dir.x, dir.y, 0f) * viewDistance;
+            float a = -halfAngle + (viewAngle / segments) * i;
+            Vector2 dir = Quaternion.Euler(0, 0, a) * facingDir;
+            verts[i + 1] = (Vector3)dir * viewDistance;
         }
 
         for (int i = 0; i < segments; i++)
         {
-            triangles[i * 3]     = 0;
-            triangles[i * 3 + 1] = i + 1;
-            triangles[i * 3 + 2] = i + 2;
+            tris[i * 3]     = 0;
+            tris[i * 3 + 1] = i + 1;
+            tris[i * 3 + 2] = i + 2;
         }
 
         coneMesh.Clear();
-        coneMesh.vertices = vertices;
-        coneMesh.triangles = triangles;
+        coneMesh.vertices  = verts;
+        coneMesh.triangles = tris;
         coneMesh.RecalculateNormals();
     }
 
     void Update()
     {
-        //rotate toward target at slow speed during turn
-        float turnSpd = (state == PatrolState.Turning) ? slowTurnSpeed : 9999f;
-        currentFacingAngle = Mathf.MoveTowardsAngle(currentFacingAngle, targetFacingAngle, turnSpd * Time.deltaTime);
-        float rad = currentFacingAngle * Mathf.Deg2Rad;
+        // rotate facing toward target angle (slow during Turning state, instant otherwise)
+        float turnSpd = state == State.Turning ? turnSpeed : 9999f;
+        facingAngle = Mathf.MoveTowardsAngle(facingAngle, targetAngle, turnSpd * Time.deltaTime);
+        float rad = facingAngle * Mathf.Deg2Rad;
         facingDir = new Vector2(Mathf.Cos(rad), Mathf.Sin(rad));
 
-        if (state != PatrolState.PlayerSpotted && PlayerInCone())
+        if (state != State.PlayerSpotted && PlayerInCone())
         {
-            state = PatrolState.PlayerSpotted;
+            state = State.PlayerSpotted;
             GameOverScreen.Show();
         }
 
         BuildConeMesh();
-        UpdateConeColor();
+        coneMaterial.color = state == State.PlayerSpotted
+            ? new Color(1f, 0.3f, 0.3f, 0.35f)   // red when player spotted
+            : new Color(1f, 1f,   1f,   0.3f);    // white normally
     }
 
     bool PlayerInCone()
     {
         if (player == null) return false;
         Vector2 toPlayer = (Vector2)player.position - (Vector2)transform.position;
-        if (toPlayer.magnitude > viewDistance) return false;
-        return Vector2.Angle(facingDir, toPlayer) <= viewAngle / 2f;
-    }
-
-    void UpdateConeColor()
-    {
-        if (coneMaterial == null) return;
-        coneMaterial.color = (state == PatrolState.PlayerSpotted)
-            ? new Color(1f, 0.3f, 0.3f, 0.35f)  //light red — stays red once spotted
-            : new Color(1f, 1f, 1f, 0.3f);       //light white
+        return toPlayer.magnitude <= viewDistance && Vector2.Angle(facingDir, toPlayer) <= viewAngle / 2f;
     }
 
     void FixedUpdate()
     {
-        Vector2 moveAxis = axis == PatrolAxis.Horizontal ? Vector2.right : Vector2.up;
+        Vector2 moveAxis = GetMoveAxis();
 
         switch (state)
         {
-            case PatrolState.Moving:
-                rb.linearVelocity = moveAxis * direction * this.speed;
+            case State.Moving:
+                rb.linearVelocity = moveAxis * direction * speed;
 
                 float offset = axis == PatrolAxis.Horizontal
                     ? rb.position.x - startPosition.x
                     : rb.position.y - startPosition.y;
 
-                if ((offset >= patrolDistance && direction == 1) ||
-                    (offset <= -patrolDistance && direction == -1))
+                if ((direction == 1 && offset >= patrolDistance) ||
+                    (direction == -1 && offset <= -patrolDistance))
                 {
                     rb.linearVelocity = Vector2.zero;
-                    state = PatrolState.WaitBeforeTurn;
+                    state = State.WaitBeforeTurn;
                     stateTimer = waitBeforeTurn;
                 }
                 break;
 
-            case PatrolState.WaitBeforeTurn:
+            case State.WaitBeforeTurn:
                 rb.linearVelocity = Vector2.zero;
                 stateTimer -= Time.fixedDeltaTime;
                 if (stateTimer <= 0f)
                 {
-                    direction = -direction; //flip direction
-                    Vector2 newDir = moveAxis * direction;
-                    targetFacingAngle = Mathf.Atan2(newDir.y, newDir.x) * Mathf.Rad2Deg;
-                    state = PatrolState.Turning;
+                    direction = -direction;
+                    Vector2 newDir = GetMoveDir();
+                    targetAngle = Mathf.Atan2(newDir.y, newDir.x) * Mathf.Rad2Deg;
+                    state = State.Turning;
                 }
                 break;
 
-            case PatrolState.Turning:
+            case State.Turning:
                 rb.linearVelocity = Vector2.zero;
-                //wait until cone finishes rotating
-                if (Mathf.Abs(Mathf.DeltaAngle(currentFacingAngle, targetFacingAngle)) < 1f)
+                // wait until the cone finishes rotating
+                if (Mathf.Abs(Mathf.DeltaAngle(facingAngle, targetAngle)) < 1f)
                 {
-                    state = PatrolState.WaitAfterTurn;
+                    state = State.WaitAfterTurn;
                     stateTimer = waitAfterTurn;
                 }
                 break;
 
-            case PatrolState.WaitAfterTurn:
+            case State.WaitAfterTurn:
                 rb.linearVelocity = Vector2.zero;
                 stateTimer -= Time.fixedDeltaTime;
                 if (stateTimer <= 0f)
-                    state = PatrolState.Moving;
+                    state = State.Moving;
                 break;
 
-            case PatrolState.PlayerSpotted:
-                rb.linearVelocity = Vector2.zero; //stop and stay stopped
+            case State.PlayerSpotted:
+                rb.linearVelocity = Vector2.zero;
                 break;
         }
     }
 
-    //draw line of sight cone
+    // draws the vision cone outline in the scene view
     void OnDrawGizmos()
     {
-        Vector2 origin = (Vector2)transform.position;
-
-        Vector2 facing;
-        if (Application.isPlaying)
-            facing = facingDir;
-        else
-            facing = axis == PatrolAxis.Horizontal
-                ? (horizontalStart == HorizontalStart.Right ? Vector2.right : Vector2.left)
-                : (verticalStart == VerticalStart.Up ? Vector2.up : Vector2.down);
+        Vector2 origin = transform.position;
+        Vector2 facing = Application.isPlaying ? facingDir
+            : (axis == PatrolAxis.Horizontal
+                ? (reverseStart ? Vector2.left  : Vector2.right)
+                : (reverseStart ? Vector2.down  : Vector2.up));
 
         float halfAngle = viewAngle / 2f;
-        Vector2 leftEdge  = (Vector2)(Quaternion.Euler(0, 0,  halfAngle) * facing) * viewDistance;
-        Vector2 rightEdge = (Vector2)(Quaternion.Euler(0, 0, -halfAngle) * facing) * viewDistance;
-
         Gizmos.color = new Color(1f, 1f, 1f, 0.6f);
-        Gizmos.DrawLine(origin, origin + leftEdge);
-        Gizmos.DrawLine(origin, origin + rightEdge);
+        Gizmos.DrawLine(origin, origin + (Vector2)(Quaternion.Euler(0, 0,  halfAngle) * facing) * viewDistance);
+        Gizmos.DrawLine(origin, origin + (Vector2)(Quaternion.Euler(0, 0, -halfAngle) * facing) * viewDistance);
 
-        int arcSegments = 20;
-        for (int i = 0; i < arcSegments; i++)
+        for (int i = 0; i < 20; i++)
         {
-            float angleA = -halfAngle + (viewAngle / arcSegments) * i;
-            float angleB = -halfAngle + (viewAngle / arcSegments) * (i + 1);
-            Vector2 pointA = origin + (Vector2)(Quaternion.Euler(0, 0, angleA) * facing) * viewDistance;
-            Vector2 pointB = origin + (Vector2)(Quaternion.Euler(0, 0, angleB) * facing) * viewDistance;
-            Gizmos.DrawLine(pointA, pointB);
+            float a1 = -halfAngle + (viewAngle / 20f) * i;
+            float a2 = -halfAngle + (viewAngle / 20f) * (i + 1);
+            Vector2 p1 = origin + (Vector2)(Quaternion.Euler(0, 0, a1) * facing) * viewDistance;
+            Vector2 p2 = origin + (Vector2)(Quaternion.Euler(0, 0, a2) * facing) * viewDistance;
+            Gizmos.DrawLine(p1, p2);
         }
     }
 
-    //draw patrol range when selected
+    // draws patrol range when the object is selected
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
@@ -246,14 +228,14 @@ public class EnemyPatrol : MonoBehaviour
         if (axis == PatrolAxis.Horizontal)
         {
             Gizmos.DrawLine(origin + Vector2.left * patrolDistance, origin + Vector2.right * patrolDistance);
-            Gizmos.DrawWireSphere(origin + Vector2.left * patrolDistance, 0.15f);
+            Gizmos.DrawWireSphere(origin + Vector2.left  * patrolDistance, 0.15f);
             Gizmos.DrawWireSphere(origin + Vector2.right * patrolDistance, 0.15f);
         }
         else
         {
             Gizmos.DrawLine(origin + Vector2.down * patrolDistance, origin + Vector2.up * patrolDistance);
             Gizmos.DrawWireSphere(origin + Vector2.down * patrolDistance, 0.15f);
-            Gizmos.DrawWireSphere(origin + Vector2.up * patrolDistance, 0.15f);
+            Gizmos.DrawWireSphere(origin + Vector2.up   * patrolDistance, 0.15f);
         }
     }
 }
