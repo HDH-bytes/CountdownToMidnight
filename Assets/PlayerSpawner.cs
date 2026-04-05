@@ -20,6 +20,5 @@ public class PlayerSpawner : MonoBehaviour
             spawnedPlayer = Instantiate(character2Prefab, transform.position, transform.rotation);
         }
         
-        Camera.main.GetComponent<CameraFollow>().target = spawnedPlayer.transform;
     }
 }

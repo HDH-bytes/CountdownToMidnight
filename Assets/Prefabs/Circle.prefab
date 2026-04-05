@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3144476937807585719}
   - component: {fileID: 437321111338322021}
+  - component: {fileID: -4498884584798894220}
   m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
@@ -92,6 +93,19 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &-4498884584798894220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2600846488384300529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d90122b574ca4bd46aa9fb7348cb52db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyFollow
+  speed: 3
 --- !u!1 &7846734958921961419
 GameObject:
   m_ObjectHideFlags: 0
