@@ -223,7 +223,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Increase Health
+  m_text: 'Health
 
 '
   m_isRightToLeft: 0
@@ -28861,10 +28861,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPC
   dialogueData: {fileID: 11400000, guid: a67c9b8438716ef4083a007d35aece3a, type: 2}
-  dialoguePanel: {fileID: 1048655907}
-  dialogueText: {fileID: 269606651}
-  nameText: {fileID: 2138963411}
-  portraitImage: {fileID: 1888743961}
+  dialoguePanel: {fileID: 0}
+  dialogueText: {fileID: 0}
+  nameText: {fileID: 0}
+  portraitImage: {fileID: 0}
   dialogueIndex: 0
 --- !u!61 &1669752322
 BoxCollider2D:
@@ -132529,7 +132529,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Increase Speed
+  m_text: Speed
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
