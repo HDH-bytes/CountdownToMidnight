@@ -26,6 +26,11 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+    public void IncreaseSpeed(float amount)
+    {
+        moveSpeed += amount;
+    }
+
     public void Move(InputAction.CallbackContext context)
     {
         animator.SetBool("isRunning", true);
