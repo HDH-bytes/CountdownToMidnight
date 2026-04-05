@@ -3965,7 +3965,7 @@ MonoBehaviour:
   dialoguePanel: {fileID: 281263764}
   dialogueText: {fileID: 1689453328}
   nameText: {fileID: 483438543}
-  portraitImage: {fileID: 0}
+  portraitImage: {fileID: 482382588}
   dialogueIndex: 0
 --- !u!61 &483024953
 BoxCollider2D:
