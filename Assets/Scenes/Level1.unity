@@ -150,6 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerSpawner
   character1Prefab: {fileID: 3898376022755239336, guid: d32e860caac6381469b227c654bd3d96, type: 3}
   character2Prefab: {fileID: 8527953543531883416, guid: fec0d025ee0ff3f489eb11c6903d9c3b, type: 3}
+  character3Prefab: {fileID: 8254341043332265926, guid: b28a5014ba4d9c2409a4e1feb4064348, type: 3}
 --- !u!4 &166522864
 Transform:
   m_ObjectHideFlags: 0

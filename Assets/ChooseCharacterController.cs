@@ -16,4 +16,11 @@ public class ChooseCharacterController : MonoBehaviour
         PlayerPrefs.Save();
         SceneManager.LoadScene("Level1");
     }
+
+    public void ChooseCharacter3()
+    {
+        PlayerPrefs.SetInt("SelectedCharacter", 2);
+        PlayerPrefs.Save();
+        SceneManager.LoadScene("Level1");
+    }
 }
