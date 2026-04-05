@@ -147,8 +147,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40d2c84dcedaf8149b635021f91164b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAttack
-  bulletPrefab: {fileID: 0}
-  firePoint: {fileID: 0}
+  bulletPrefab: {fileID: 1306447330979268347, guid: a0d286152554e4945936d7349ab5a1ae, type: 3}
+  firePoint: {fileID: 3971590618336017085, guid: c2d62e87b42560f4483dcde178dc4f24, type: 3}
   fireRate: 1
 --- !u!1001 &6577571373133353149
 PrefabInstance:
