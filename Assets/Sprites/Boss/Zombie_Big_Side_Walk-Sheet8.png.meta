@@ -1,10 +1,28 @@
 fileFormatVersion: 2
-guid: 0bcaf05d1a5a2e443b4043d6e3a025aa
+guid: a3beb61ae0d81c34b88109439087ab71
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6248629114275449574
-    second: Zombie_Big_Down_Idle-Sheet6_0
+      213: -5188933011754534173
+    second: Zombie_Big_Side_Walk-Sheet8_0
+  - first:
+      213: 6895453916438896024
+    second: Zombie_Big_Side_Walk-Sheet8_1
+  - first:
+      213: 1448673045310231601
+    second: Zombie_Big_Side_Walk-Sheet8_2
+  - first:
+      213: 8902007970720238146
+    second: Zombie_Big_Side_Walk-Sheet8_3
+  - first:
+      213: -7527943756556027004
+    second: Zombie_Big_Side_Walk-Sheet8_4
+  - first:
+      213: -649743744184286564
+    second: Zombie_Big_Side_Walk-Sheet8_5
+  - first:
+      213: -8180243675433536037
+    second: Zombie_Big_Side_Walk-Sheet8_6
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,11 +118,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Zombie_Big_Down_Idle-Sheet6_0
+      name: Zombie_Big_Side_Walk-Sheet8_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 1
         width: 16
         height: 23
       alignment: 0
@@ -115,18 +133,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a15b27e5de86849a0800000000000000
-      internalID: -6248629114275449574
+      spriteID: 3eab21ffae43df7b0800000000000000
+      internalID: -5188933011754534173
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zombie_Big_Down_Idle-Sheet6_1
+      name: Zombie_Big_Side_Walk-Sheet8_1
       rect:
         serializedVersion: 2
         x: 16
-        y: 0
+        y: 1
         width: 16
         height: 23
       alignment: 0
@@ -135,20 +153,20 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: b874e26285c64e340a82fa312499b58e
-      internalID: 1216307341
+      spriteID: 89d9a66adc291bf50800000000000000
+      internalID: 6895453916438896024
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zombie_Big_Down_Idle-Sheet6_2
+      name: Zombie_Big_Side_Walk-Sheet8_2
       rect:
         serializedVersion: 2
         x: 32
-        y: 0
+        y: 1
         width: 16
         height: 23
       alignment: 0
@@ -157,20 +175,20 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 43ef7b5e13b049a4bb82641f803c13de
-      internalID: -1126806358
+      spriteID: 13456659578ba1410800000000000000
+      internalID: 1448673045310231601
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zombie_Big_Down_Idle-Sheet6_3
+      name: Zombie_Big_Side_Walk-Sheet8_3
       rect:
         serializedVersion: 2
         x: 48
-        y: 0
+        y: 1
         width: 16
         height: 23
       alignment: 0
@@ -179,20 +197,20 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 130eee68882441c4ea4410c336e29e82
-      internalID: 1964335536
+      spriteID: 24ac972a5194a8b70800000000000000
+      internalID: 8902007970720238146
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zombie_Big_Down_Idle-Sheet6_4
+      name: Zombie_Big_Side_Walk-Sheet8_4
       rect:
         serializedVersion: 2
         x: 64
-        y: 0
+        y: 1
         width: 16
         height: 23
       alignment: 0
@@ -201,20 +219,64 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 94e1321b138d03f4d95f7598b0780b65
-      internalID: -2113735394
+      spriteID: 48bbb55c90f578790800000000000000
+      internalID: -7527943756556027004
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zombie_Big_Down_Idle-Sheet6_5
+      name: Zombie_Big_Side_Walk-Sheet8_5
       rect:
         serializedVersion: 2
         x: 80
-        y: 0
+        y: 1
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c920dd4d185abf6f0800000000000000
+      internalID: -649743744184286564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie_Big_Side_Walk-Sheet8_6
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 1
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd5f5adc7bfe97e80800000000000000
+      internalID: -8180243675433536037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie_Big_Side_Walk-Sheet8_7
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 1
         width: 16
         height: 23
       alignment: 0
@@ -225,8 +287,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 71a60a75827c2c846bfedb02312fb551
-      internalID: 1358549198
+      spriteID: ddcc2de621c33f64e92a1c54907b1f71
+      internalID: 1097153652
       vertices: []
       indices: 
       edges: []
@@ -235,7 +297,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 1e1809132b74bae40a4f7c1b1ba7a793
+    spriteID: 79e89da33e154af4bb01496ab15153d1
     internalID: 0
     vertices: []
     indices: 
@@ -247,12 +309,14 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":23.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Zombie_Big_Down_Idle-Sheet6_0: -6248629114275449574
-      Zombie_Big_Down_Idle-Sheet6_1: 1216307341
-      Zombie_Big_Down_Idle-Sheet6_2: -1126806358
-      Zombie_Big_Down_Idle-Sheet6_3: 1964335536
-      Zombie_Big_Down_Idle-Sheet6_4: -2113735394
-      Zombie_Big_Down_Idle-Sheet6_5: 1358549198
+      Zombie_Big_Side_Walk-Sheet8_0: -5188933011754534173
+      Zombie_Big_Side_Walk-Sheet8_1: 6895453916438896024
+      Zombie_Big_Side_Walk-Sheet8_2: 1448673045310231601
+      Zombie_Big_Side_Walk-Sheet8_3: 8902007970720238146
+      Zombie_Big_Side_Walk-Sheet8_4: -7527943756556027004
+      Zombie_Big_Side_Walk-Sheet8_5: -649743744184286564
+      Zombie_Big_Side_Walk-Sheet8_6: -8180243675433536037
+      Zombie_Big_Side_Walk-Sheet8_7: 1097153652
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
