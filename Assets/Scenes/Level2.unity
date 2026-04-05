@@ -8655,6 +8655,10 @@ PrefabInstance:
       propertyPath: speed
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 271439481228305902, guid: 11d086f2d244f4a488ceb634561d6bf9, type: 3}
+      propertyPath: fireRate
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2600846488384300529, guid: 11d086f2d244f4a488ceb634561d6bf9, type: 3}
       propertyPath: m_Name
       value: Circle (1)
@@ -8950,6 +8954,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -3517004105443990311, guid: 11d086f2d244f4a488ceb634561d6bf9, type: 3}
       propertyPath: speed
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 271439481228305902, guid: 11d086f2d244f4a488ceb634561d6bf9, type: 3}
+      propertyPath: fireRate
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2600846488384300529, guid: 11d086f2d244f4a488ceb634561d6bf9, type: 3}

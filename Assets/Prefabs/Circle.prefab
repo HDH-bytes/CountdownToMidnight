@@ -33,7 +33,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2490311847658517104}
+  - {fileID: 8469778439135862205}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &437321111338322021
@@ -150,7 +150,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 0}
   firePoint: {fileID: 0}
   fireRate: 1
---- !u!1001 &886599600019947376
+--- !u!1001 &6577571373133353149
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -205,10 +205,38 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8032126689811066111, guid: c27393b50ce7a024d91f62ca9eadda84, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 271439481228305902}
   m_SourcePrefab: {fileID: 100100000, guid: c27393b50ce7a024d91f62ca9eadda84, type: 3}
---- !u!4 &2490311847658517104 stripped
+--- !u!1 &3764977382872267842 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8032126689811066111, guid: c27393b50ce7a024d91f62ca9eadda84, type: 3}
+  m_PrefabInstance: {fileID: 6577571373133353149}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &271439481228305902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3764977382872267842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40d2c84dcedaf8149b635021f91164b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyAttack
+  bulletPrefab: {fileID: 1306447330979268347, guid: a0d286152554e4945936d7349ab5a1ae, type: 3}
+  firePoint: {fileID: 8229101883021164124}
+  fireRate: 1
+--- !u!4 &8229101883021164124 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2989157326799056609, guid: c27393b50ce7a024d91f62ca9eadda84, type: 3}
+  m_PrefabInstance: {fileID: 6577571373133353149}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8469778439135862205 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3369405889211583744, guid: c27393b50ce7a024d91f62ca9eadda84, type: 3}
-  m_PrefabInstance: {fileID: 886599600019947376}
+  m_PrefabInstance: {fileID: 6577571373133353149}
   m_PrefabAsset: {fileID: 0}
