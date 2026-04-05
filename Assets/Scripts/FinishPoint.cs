@@ -5,20 +5,15 @@ public class FinishPoint : MonoBehaviour
 {
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
-        {
-            int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-            int nextSceneIndex = currentSceneIndex + 1;
+        if (!other.CompareTag("Player")) return;
 
-            if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
-            {
-                SceneManager.LoadScene(nextSceneIndex);
-            }
-            else
-            {
-                Debug.Log("No more levels!");
-                SceneManager.LoadScene(0);
-            }
-        }
+        int currentIndex = SceneManager.GetActiveScene().buildIndex;
+        ScoreManager.Instance?.AddXP(levelManager.GetXPForLevel(currentIndex));
+
+        int nextIndex = currentIndex + 1;
+        if (nextIndex < SceneManager.sceneCountInBuildSettings)
+            SceneManager.LoadScene(nextIndex);
+        else
+            SceneManager.LoadScene(0);
     }
 }
