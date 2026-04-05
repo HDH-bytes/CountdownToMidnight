@@ -25498,9 +25498,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyPatrol
   axis: 1
-  reverseStart: 0
+  reverseStart: 1
   patrolDistance: 9
-  speed: 5
+  speed: 6
   waitBeforeTurn: 0.5
   turnSpeed: 80
   waitAfterTurn: 0.3
@@ -26396,7 +26396,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyPatrol
   axis: 1
-  reverseStart: 1
+  reverseStart: 0
   patrolDistance: 10
   speed: 7
   waitBeforeTurn: 0.5
