@@ -1,12 +1,14 @@
 using UnityEngine;
 
-// Inherits from Character base class
-public class BossAI : Character
+public class BossAI : MonoBehaviour
 {
     [Header("Targeting")]
     private Transform player; 
 
-    [Header("Boss Specific Stats")]
+    [Header("Stats")]
+    public int maxHealth = 3;
+    private int currentHealth;
+    public float moveSpeed = 3f;
     public float attackRange = 1.5f;
     public float detectionRange = 7f; 
 
@@ -18,15 +20,11 @@ public class BossAI : Character
     private bool isDead = false;
     private bool isAttacking = false;
 
-    protected override void Start()
+    void Start()
     {
-        base.Start(); 
-
-        if (speed == 0f) speed = 3f;
-        if (maxHealth == 0) maxHealth = 3;
-
         animator = GetComponent<Animator>();
         bossCollider = GetComponent<Collider2D>();
+        currentHealth = maxHealth;
     }
 
     void Update()
@@ -41,38 +39,42 @@ public class BossAI : Character
             return;
         }
 
+        // --- Standard Combat & Movement Logic ---
         float distanceToPlayer = Vector2.Distance(transform.position, player.position);
 
         if (distanceToPlayer <= attackRange)
         {
+            // Inside Attack Range: Stop walking and swing!
             animator.SetBool("isWalking", false);
             
             if (!isAttacking)
             {
-                // Send direction to the Attack Blend Tree
-                Vector2 direction = (player.position - transform.position).normalized;
-                animator.SetFloat("AttackX", direction.x);
-                animator.SetFloat("AttackY", direction.y);
-
                 AttackPlayer();
             }
         }
         else if (distanceToPlayer <= detectionRange && !isAttacking) 
         {
+            // Inside Detection Range, but outside Attack Range: Chase them!
             animator.SetBool("isWalking", true);
-            transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
 
-            // Send direction to the Walk Blend Tree
+            // --- NEW BLEND TREE ANIMATION LOGIC ---
+            // Calculate the exact X and Y direction to the player
             Vector2 direction = (player.position - transform.position).normalized;
+
+            // Send that math directly to the Animator's Float parameters
             animator.SetFloat("MoveX", direction.x);
             animator.SetFloat("MoveY", direction.y);
+            // --------------------------------------
         }
         else 
         {
+            // Outside Detection Range: Player is too far away, stand still.
             animator.SetBool("isWalking", false);
         }
     }
 
+    // --- The Target-Finding Algorithm ---
     void FindClosestPlayer()
     {
         GameObject[] allPlayers = GameObject.FindGameObjectsWithTag("Player");
@@ -94,34 +96,40 @@ public class BossAI : Character
         player = closestTarget;
     }
 
+    // --- Combat Methods ---
     void AttackPlayer()
     {
         isAttacking = true;
         animator.SetTrigger("Attack");
-        Debug.Log("Boss swings at the closest player!");
         
-        // Notice we deleted the Invoke("ResetAttack") timer here!
+        Debug.Log("Boss swings at the closest player!");
+
+        Invoke("ResetAttack", 1f); 
     }
 
-    // This is the new method that your Animation Event will trigger!
-    public void FinishAttack()
+    void ResetAttack()
     {
         if (!isDead)
         {
             isAttacking = false;
-            Debug.Log("Animation Event Fired: Attack Finished");
         }
     }
 
-    public override void TakeDamage(int amount)
+    public void TakeDamage(int damage)
     {
         if (isDead) return;
-        base.TakeDamage(amount); 
+
+        currentHealth -= damage;
+        Debug.Log("Boss took damage! Health remaining: " + currentHealth);
+
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
     }
 
-    protected override void Die()
+    void Die()
     {
-        if (isDead) return;
         isDead = true;
         
         animator.SetBool("isWalking", false);
@@ -135,6 +143,7 @@ public class BossAI : Character
         Debug.Log("Boss Defeated!");
     }
 
+    // --- Editor Visualization ---
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
