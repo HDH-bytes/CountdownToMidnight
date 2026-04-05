@@ -2,23 +2,23 @@ using UnityEngine;
 
 public class BossAI : MonoBehaviour
 {
+    [Header("Targeting")]
     private Transform player; 
 
+    [Header("Stats")]
     public int maxHealth = 3;
     private int currentHealth;
     public float moveSpeed = 3f;
     public float attackRange = 1.5f;
-    public float detectionRange = 7f; 
+    public float detectionRange = 7f; // New: How close the player needs to be to wake the boss up
 
+    [Header("Components")]
     private Animator animator;
     private Collider2D bossCollider;
     
     // State Tracking
     private bool isDead = false;
     private bool isAttacking = false;
-
-    // --- NEW: WAKE UP SYSTEM ---
-    public bool isAwake = false;
 
     void Start()
     {
@@ -27,34 +27,29 @@ public class BossAI : MonoBehaviour
         currentHealth = maxHealth;
     }
 
-    // --- NEW: THE START BATTLE COMMAND ---
-    // This is exactly what the BattleTrigger script is looking for!
-    public void StartBattle()
-    {
-        isAwake = true;
-        Debug.Log("The Boss has woken up!");
-    }
-
     void Update()
     {
+        // 1. If the boss is dead, stop running logic entirely
         if (isDead) return;
 
-        // --- NEW: SLEEP SHIELD ---
-        // If the trigger hasn't woken the boss up yet, freeze its brain!
-        if (!isAwake) return; 
-
+        // 2. Constantly scan the arena to find the closest player
         FindClosestPlayer();
 
+        // 3. If there are NO players currently in the scene, stand still and wait
         if (player == null) 
         {
             animator.SetBool("isWalking", false);
             return;
         }
+
+        // --- Standard Combat & Movement Logic ---
         
+        // Calculate distance to whoever won the "closest player" check
         float distanceToPlayer = Vector2.Distance(transform.position, player.position);
 
         if (distanceToPlayer <= attackRange)
         {
+            // Inside Attack Range: Stop walking and swing!
             animator.SetBool("isWalking", false);
             
             if (!isAttacking)
@@ -64,9 +59,11 @@ public class BossAI : MonoBehaviour
         }
         else if (distanceToPlayer <= detectionRange && !isAttacking) 
         {
+            // Inside Detection Range, but outside Attack Range: Chase them!
             animator.SetBool("isWalking", true);
             transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
 
+            // Flip the boss sprite to face the player's X direction
             if (player.position.x < transform.position.x)
                 transform.localScale = new Vector3(-1, 1, 1); 
             else
@@ -74,17 +71,21 @@ public class BossAI : MonoBehaviour
         }
         else 
         {
+            // Outside Detection Range: Player is too far away, stand still.
             animator.SetBool("isWalking", false);
         }
     }
 
+    // --- The Target-Finding Algorithm ---
     void FindClosestPlayer()
     {
+        // Find every GameObject in the scene right now with the "Player" tag
         GameObject[] allPlayers = GameObject.FindGameObjectsWithTag("Player");
 
         float closestDistance = Mathf.Infinity; 
         Transform closestTarget = null;
 
+        // Loop through the array to find the shortest distance
         foreach (GameObject p in allPlayers)
         {
             float distanceToP = Vector2.Distance(transform.position, p.transform.position);
@@ -96,9 +97,11 @@ public class BossAI : MonoBehaviour
             }
         }
 
+        // Assign the winner as the boss's current target
         player = closestTarget;
     }
 
+    // --- Combat Methods ---
     void AttackPlayer()
     {
         isAttacking = true;
@@ -106,6 +109,7 @@ public class BossAI : MonoBehaviour
         
         Debug.Log("Boss swings at the closest player!");
 
+        // Prevents the boss from moving or attacking again for 1 second.
         Invoke("ResetAttack", 1f); 
     }
 
@@ -145,6 +149,8 @@ public class BossAI : MonoBehaviour
         Debug.Log("Boss Defeated!");
     }
 
+    // --- Editor Visualization ---
+    // This draws visible circles in the Unity Editor Scene view to help you balance the game ranges
     void OnDrawGizmosSelected()
     {
         // Draw a yellow circle for the Detection Range

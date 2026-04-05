@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d0c0ee08306654f4bb0932b46b629dc6
+guid: cb9118f33ef8f5d4e9ae92dd447bc0fe
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2973681834124979194
-    second: Car_8_Rust_Light-Green_Bus_0
+      213: -775712120450794592
+    second: Inventory_1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,12 +46,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 60
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Car_8_Rust_Light-Green_Bus_0
+      name: Inventory_1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 61
-        height: 31
+        width: 143
+        height: 91
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: afb2d067fd3a44920800000000000000
-      internalID: 2973681834124979194
+      spriteID: 0abb094bfed1c35f0800000000000000
+      internalID: -775712120450794592
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 8a69ea25d88653945a1c3ec2fa4f3218
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Car_8_Rust_Light-Green_Bus_0: 2973681834124979194
+      Inventory_1_0: -775712120450794592
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

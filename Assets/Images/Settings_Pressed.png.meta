@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d0c0ee08306654f4bb0932b46b629dc6
+guid: 34001609b85ac5c4c9fde59262ebb70c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2973681834124979194
-    second: Car_8_Rust_Light-Green_Bus_0
+      213: -7698630191012756882
+    second: Settings_Pressed_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Car_8_Rust_Light-Green_Bus_0
+      name: Settings_Pressed_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 61
-        height: 31
+        width: 76
+        height: 19
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: afb2d067fd3a44920800000000000000
-      internalID: 2973681834124979194
+      spriteID: e62469f51a8f82590800000000000000
+      internalID: -7698630191012756882
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 8a69ea25d88653945a1c3ec2fa4f3218
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Car_8_Rust_Light-Green_Bus_0: 2973681834124979194
+      Settings_Pressed_0: -7698630191012756882
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
