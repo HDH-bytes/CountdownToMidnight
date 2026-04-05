@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
 public class FinishPoint : MonoBehaviour
 {
     void OnTriggerEnter(Collider other)
@@ -18,5 +19,6 @@ public class FinishPoint : MonoBehaviour
                 Debug.Log("No more levels!");
                 SceneManager.LoadScene(0);
             }
+        }
     }
 }
