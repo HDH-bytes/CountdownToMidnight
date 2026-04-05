@@ -28,8 +28,11 @@ public class Bullet : MonoBehaviour
         {
             enemy.TakeDamage(bulletDamage);
         }
-        // Destroys bullet upon collision
-        Destroy(gameObject);
-        
+
+        if (other.CompareTag("Wall") || other.CompareTag("Enemy"))
+        {
+            // Destroys bullet upon collision
+            Destroy(gameObject);
+        }
     }
 }

@@ -1733,7 +1733,7 @@ GameObject:
   - component: {fileID: 211486354}
   m_Layer: 0
   m_Name: EnemyPatrolL4
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1931,7 +1931,7 @@ GameObject:
   - component: {fileID: 252708494}
   m_Layer: 0
   m_Name: EnemyPatrolL1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2491,7 +2491,7 @@ GameObject:
   - component: {fileID: 324173008}
   m_Layer: 0
   m_Name: EnemyPatrolL2
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24274,7 +24274,7 @@ GameObject:
   - component: {fileID: 697500736}
   m_Layer: 0
   m_Name: EnemyPatrolL5
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25484,7 +25484,7 @@ GameObject:
   - component: {fileID: 774675343}
   m_Layer: 0
   m_Name: EnemyPatrolL3
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27994,7 +27994,7 @@ GameObject:
   - component: {fileID: 1809364187}
   m_Layer: 0
   m_Name: EnemyPatrolL4
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28402,7 +28402,7 @@ GameObject:
   - component: {fileID: 1857738912}
   m_Layer: 0
   m_Name: Collision
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
