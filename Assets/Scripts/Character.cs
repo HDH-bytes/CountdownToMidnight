@@ -24,9 +24,12 @@ public abstract class Character : MonoBehaviour, IDamageable
     public virtual void TakeDamage(int amount)
     {
         currentHealth -= amount;
+        
+        Debug.Log(gameObject.name + " took "  + amount + " damage" );
  
         if (currentHealth <= 0)
         {
+            Debug.Log(gameObject.name + " is dead");
             currentHealth = 0;
             Die(); //subclasses can override this
         }
