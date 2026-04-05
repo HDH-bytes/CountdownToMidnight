@@ -113,7 +113,7 @@ public class EnemyPatrol : MonoBehaviour
 
     void Update()
     {
-        // rotate facing toward target angle (slow during Turning state, instant otherwise)
+        // rotate facing toward target angle 
         float turnSpd = state == State.Turning ? turnSpeed : 9999f;
         facingAngle = Mathf.MoveTowardsAngle(facingAngle, targetAngle, turnSpd * Time.deltaTime);
         float rad = facingAngle * Mathf.Deg2Rad;
@@ -127,8 +127,8 @@ public class EnemyPatrol : MonoBehaviour
 
         BuildConeMesh();
         coneMaterial.color = state == State.PlayerSpotted
-            ? new Color(1f, 0.3f, 0.3f, 0.35f)   // red when player spotted
-            : new Color(1f, 1f,   1f,   0.3f);    // white normally
+            ? new Color(1f, 0.3f, 0.3f, 0.35f)   //red
+            : new Color(1f, 1f,   1f,   0.3f);    //white
     }
 
     bool PlayerInCone()
@@ -195,7 +195,7 @@ public class EnemyPatrol : MonoBehaviour
         }
     }
 
-    // draws the vision cone outline in the scene view
+    //draws the vision cone outline in the scene view
     void OnDrawGizmos()
     {
         Vector2 origin = transform.position;
