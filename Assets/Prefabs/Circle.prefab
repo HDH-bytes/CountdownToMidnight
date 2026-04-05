@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3144476937807585719}
   - component: {fileID: 437321111338322021}
-  - component: {fileID: -4498884584798894220}
+  - component: {fileID: -1002935104748492247}
+  - component: {fileID: -3517004105443990311}
   m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 2600846488384300529}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.75, y: -0.2, z: 0}
+  m_LocalPosition: {x: -2.16, y: -0.36, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -93,7 +94,34 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &-4498884584798894220
+--- !u!50 &-1002935104748492247
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2600846488384300529}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!114 &-3517004105443990311
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -105,7 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d90122b574ca4bd46aa9fb7348cb52db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyFollow
-  speed: 3
+  speed: 2
 --- !u!1 &7846734958921961419
 GameObject:
   m_ObjectHideFlags: 0
@@ -131,14 +159,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7846734958921961419}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.204, y: -0.212, z: 0}
+  m_LocalRotation: {x: -0.000749968, y: 0.99546206, z: -0.008686395, w: 0.09475958}
+  m_LocalPosition: {x: -1.36, y: -0.13, z: 0}
   m_LocalScale: {x: 0.3305895, y: 0.30760118, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5620715025008435837}
   m_Father: {fileID: 3144476937807585719}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.983, y: 169.123, z: -0.18}
 --- !u!212 &7500332055325131290
 SpriteRenderer:
   serializedVersion: 2
