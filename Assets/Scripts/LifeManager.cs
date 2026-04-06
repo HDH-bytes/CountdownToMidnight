@@ -1,23 +1,42 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// Persistent singleton that tracks the player's remaining hearts across all scenes.
-/// Max 10 hearts. Hearts are spent when the player is caught/fails a level.
-/// When hearts reach 0, the player is forced to the StartScene for a full reset.
-/// Call LifeManager.Instance.LoseHeart() from any game-over trigger.
-/// Call LifeManager.Instance.ResetLives() when starting a completely new game.
+/// Max 10 hearts. Hearts reset to 10 automatically whenever StartScene or ChooseCharacter loads.
 /// </summary>
 public class LifeManager : MonoBehaviour
 {
     public const int MaxLives = 10;
 
-    // Name used in PlayerPrefs to persist heart count across sessions
     private const string PrefsKey = "RemainingLives";
 
     public static LifeManager Instance { get; private set; }
 
-    /// <summary>Current remaining hearts (0–10).</summary>
     public int RemainingLives { get; private set; }
+
+    // ---------------------------------------------------------------
+    // AUTO-BOOT — subscribes to sceneLoaded before the first scene runs
+    // ---------------------------------------------------------------
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+    private static void Init()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private static void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // Guarantee LifeManager exists in every scene
+        if (Instance == null)
+            new GameObject("LifeManager").AddComponent<LifeManager>();
+
+        // Reset to full hearts whenever the player visits the start/character screens
+        if (scene.name == "StartScene" || scene.name == "ChooseCharacter")
+            Instance.ResetLives();
+    }
+
+    // ---------------------------------------------------------------
 
     void Awake()
     {
@@ -30,9 +49,9 @@ public class LifeManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
-        // Load persisted value; default to max on first run
-        RemainingLives = PlayerPrefs.GetInt(PrefsKey, MaxLives);
-        RemainingLives = Mathf.Clamp(RemainingLives, 0, MaxLives);
+        // Start at full lives — stale PlayerPrefs are overwritten by OnSceneLoaded anyway
+        RemainingLives = MaxLives;
+        Save();
     }
 
     /// <summary>
