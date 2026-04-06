@@ -1323,6 +1323,7 @@ MonoBehaviour:
   healthButton: {fileID: 1140541126}
   closeButton: {fileID: 568831428}
   speedIncrease: 2
+  warningText: {fileID: 0}
 --- !u!114 &1041857787
 MonoBehaviour:
   m_ObjectHideFlags: 0
