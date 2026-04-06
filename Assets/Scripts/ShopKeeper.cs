@@ -53,8 +53,16 @@ public class ShopKeeper : MonoBehaviour
         CloseShop();
     }
 
+    /// <summary>Called by Level4Timer when time expires to dismiss the shop immediately.</summary>
+    public void ForceClose()
+    {
+        CloseShop();
+    }
+
     private void UpgradeSpeed()
     {
+        if (Level4Timer.IsExpired) return; // time ran out — no upgrades allowed
+
         if (_playerMovement != null)
             _playerMovement.IncreaseSpeed(speedIncrease);
 
@@ -63,6 +71,8 @@ public class ShopKeeper : MonoBehaviour
 
     private void UpgradeHealth()
     {
+        if (Level4Timer.IsExpired) return; // time ran out — no upgrades allowed
+
         EnsureLifeManager();
 
         if (LifeManager.Instance.RemainingLives >= LifeManager.MaxLives)

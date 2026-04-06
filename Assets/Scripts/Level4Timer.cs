@@ -22,11 +22,15 @@ public class Level4Timer : MonoBehaviour
     [Header("Settings")]
     public float startTime = 48f;
 
+    /// <summary>True once the timer hits zero this session. Reset when the scene reloads.</summary>
+    public static bool IsExpired { get; private set; }
+
     private float timeRemaining;
     private bool isRunning = true;
 
     void Start()
     {
+        IsExpired = false; // reset each time the scene loads fresh
         timeRemaining = startTime;
 
         // Safety: wire the button in code dynamically, bypassing Inspector bugs
@@ -71,6 +75,12 @@ public class Level4Timer : MonoBehaviour
 
     void ShowTimeOut()
     {
+        IsExpired = true;
+
+        // Close any open shopkeeper panel so the player can't slip in an upgrade
+        ShopKeeper shop = FindAnyObjectByType<ShopKeeper>();
+        if (shop != null) shop.ForceClose();
+
         // Deduct a heart
         EnsureLifeManager();
         LifeManager.Instance.LoseHeart();
