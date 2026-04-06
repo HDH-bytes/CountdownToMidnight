@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerStats : MonoBehaviour
+public class PlayerStats : Character
 {
     [Header("Identity")]
     public string playerName;
