@@ -69,6 +69,15 @@ public class LifeManager : MonoBehaviour
     }
 
     /// <summary>
+    /// Adds one heart (up to MaxLives). Call from the shopkeeper health upgrade.
+    /// </summary>
+    public void GainHeart()
+    {
+        RemainingLives = Mathf.Min(MaxLives, RemainingLives + 1);
+        Save();
+    }
+
+    /// <summary>
     /// Returns true when the player is allowed to retry the current level
     /// (i.e. they still have hearts remaining after losing one this run).
     /// </summary>
