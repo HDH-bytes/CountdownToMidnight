@@ -4,14 +4,15 @@ using UnityEngine.SceneManagement;
 using TMPro;
 
 /// <summary>
-/// Level 4 only — 24-second countdown timer with millisecond display.
+/// Level 4 only — 48-second countdown timer with millisecond display.
 /// Shows a "TIME IS OUT!!!" panel with a Retry button when time expires.
+/// Deducts one heart on time-out. If hearts reach 0 the player is sent to StartScene.
 /// Attach this script to any GameObject in the Level4 scene.
 /// </summary>
 public class Level4Timer : MonoBehaviour
 {
     [Header("Timer HUD")]
-    [Tooltip("The TMP_Text that shows the countdown (e.g. '23.415')")]
+    [Tooltip("The TMP_Text that shows the countdown (e.g. '46.503')")]
     public TMP_Text timerText;
 
     [Header("Time Out Panel")]
@@ -19,7 +20,7 @@ public class Level4Timer : MonoBehaviour
     public GameObject timeOutPanel;
 
     [Header("Settings")]
-    public float startTime = 24f;
+    public float startTime = 48f;
 
     private float timeRemaining;
     private bool isRunning = true;
@@ -70,7 +71,14 @@ public class Level4Timer : MonoBehaviour
 
     void ShowTimeOut()
     {
-        Time.timeScale = 0f;                          // freeze the game
+        // Deduct a heart
+        EnsureLifeManager();
+        LifeManager.Instance.LoseHeart();
+
+        // If hearts are now 0, LoseHeart() already navigated to StartScene
+        if (LifeManager.Instance.RemainingLives <= 0) return;
+
+        Time.timeScale = 0f; // freeze the game
         if (timeOutPanel != null)
             timeOutPanel.SetActive(true);
     }
@@ -83,5 +91,13 @@ public class Level4Timer : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    // -------------------------------------------------------------------------
+
+    private static void EnsureLifeManager()
+    {
+        if (LifeManager.Instance == null)
+            new GameObject("LifeManager").AddComponent<LifeManager>();
     }
 }
