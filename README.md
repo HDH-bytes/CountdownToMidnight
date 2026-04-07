@@ -61,10 +61,8 @@ Jesse (JLBeitz):
   
 Victor (victor-liao93):
 - Made score manager, enemy and enemy follow class with inheritance.
-- Made score bar and score text.
-- Made health bar and health text.
-- Made inventory slots.
-- Forgot to apply overrides on the prefabs so they resetted.
+- Made inventory slots and inventory script
+- Reorganized files
 
 Demir (guveld):
 - Added camera to follow the character as it moves.
