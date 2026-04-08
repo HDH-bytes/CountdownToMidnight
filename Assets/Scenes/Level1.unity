@@ -1870,6 +1870,8 @@ GameObject:
   - component: {fileID: 211486356}
   - component: {fileID: 211486355}
   - component: {fileID: 211486354}
+  - component: {fileID: 211486361}
+  - component: {fileID: 211486360}
   m_Layer: 0
   m_Name: EnemyPatrolL4
   m_TagString: Enemy
@@ -1913,7 +1915,6 @@ MonoBehaviour:
   maxHealth: 10
   currentHealth: 10
   speed: 1
-  currentWeapon: {fileID: 0}
   points: 1
 --- !u!58 &211486356
 CircleCollider2D:
@@ -2052,6 +2053,40 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &211486360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211486353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ceb72a6047a52847a8c7b4565e1badb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyPatrolMovement
+--- !u!95 &211486361
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211486353}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &252708487
 GameObject:
   m_ObjectHideFlags: 0
@@ -2185,7 +2220,6 @@ MonoBehaviour:
   maxHealth: 10
   currentHealth: 10
   speed: 1
-  currentWeapon: {fileID: 0}
   points: 1
 --- !u!58 &252708492
 CircleCollider2D:
@@ -2760,6 +2794,8 @@ GameObject:
   - component: {fileID: 324173010}
   - component: {fileID: 324173009}
   - component: {fileID: 324173008}
+  - component: {fileID: 324173015}
+  - component: {fileID: 324173014}
   m_Layer: 0
   m_Name: EnemyPatrolL2
   m_TagString: Enemy
@@ -2803,7 +2839,6 @@ MonoBehaviour:
   maxHealth: 10
   currentHealth: 10
   speed: 1
-  currentWeapon: {fileID: 0}
   points: 1
 --- !u!58 &324173010
 CircleCollider2D:
@@ -2942,6 +2977,40 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &324173014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 324173007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ceb72a6047a52847a8c7b4565e1badb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerAnimator
+--- !u!95 &324173015
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 324173007}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d4f8e6f3a4db3334b94a2467aa0786f7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &326362549
 GameObject:
   m_ObjectHideFlags: 0
@@ -24664,6 +24733,8 @@ GameObject:
   - component: {fileID: 697500738}
   - component: {fileID: 697500737}
   - component: {fileID: 697500736}
+  - component: {fileID: 697500743}
+  - component: {fileID: 697500742}
   m_Layer: 0
   m_Name: EnemyPatrolL5
   m_TagString: Enemy
@@ -24707,7 +24778,6 @@ MonoBehaviour:
   maxHealth: 10
   currentHealth: 10
   speed: 1
-  currentWeapon: {fileID: 0}
   points: 1
 --- !u!58 &697500738
 CircleCollider2D:
@@ -24846,6 +24916,40 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &697500742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697500735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ceb72a6047a52847a8c7b4565e1badb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyPatrolMovement
+--- !u!95 &697500743
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697500735}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &713652663
 GameObject:
   m_ObjectHideFlags: 0
@@ -25994,6 +26098,8 @@ GameObject:
   - component: {fileID: 774675345}
   - component: {fileID: 774675344}
   - component: {fileID: 774675343}
+  - component: {fileID: 774675350}
+  - component: {fileID: 774675349}
   m_Layer: 0
   m_Name: EnemyPatrolL3
   m_TagString: Enemy
@@ -26037,7 +26143,6 @@ MonoBehaviour:
   maxHealth: 10
   currentHealth: 10
   speed: 1
-  currentWeapon: {fileID: 0}
   points: 1
 --- !u!58 &774675345
 CircleCollider2D:
@@ -26176,6 +26281,40 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &774675349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 774675342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ceb72a6047a52847a8c7b4565e1badb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyPatrolMovement
+--- !u!95 &774675350
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 774675342}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d4f8e6f3a4db3334b94a2467aa0786f7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &775475120
 GameObject:
   m_ObjectHideFlags: 0
@@ -26892,6 +27031,8 @@ GameObject:
   - component: {fileID: 959908104}
   - component: {fileID: 959908103}
   - component: {fileID: 959908102}
+  - component: {fileID: 959908109}
+  - component: {fileID: 959908108}
   m_Layer: 0
   m_Name: EnemyPatrolL6
   m_TagString: Enemy
@@ -26935,7 +27076,6 @@ MonoBehaviour:
   maxHealth: 10
   currentHealth: 10
   speed: 1
-  currentWeapon: {fileID: 0}
   points: 1
 --- !u!58 &959908104
 CircleCollider2D:
@@ -27074,6 +27214,40 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &959908108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 959908101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ceb72a6047a52847a8c7b4565e1badb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyPatrolMovement
+--- !u!95 &959908109
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 959908101}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d4f8e6f3a4db3334b94a2467aa0786f7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &997464590
 GameObject:
   m_ObjectHideFlags: 0
@@ -29091,6 +29265,8 @@ GameObject:
   - component: {fileID: 1809364189}
   - component: {fileID: 1809364188}
   - component: {fileID: 1809364187}
+  - component: {fileID: 1809364194}
+  - component: {fileID: 1809364193}
   m_Layer: 0
   m_Name: EnemyPatrolL4
   m_TagString: Enemy
@@ -29134,7 +29310,6 @@ MonoBehaviour:
   maxHealth: 10
   currentHealth: 10
   speed: 1
-  currentWeapon: {fileID: 0}
   points: 1
 --- !u!58 &1809364189
 CircleCollider2D:
@@ -29273,6 +29448,40 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1809364193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809364186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ceb72a6047a52847a8c7b4565e1badb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyPatrolMovement
+--- !u!95 &1809364194
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809364186}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d4f8e6f3a4db3334b94a2467aa0786f7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1818380565
 GameObject:
   m_ObjectHideFlags: 0

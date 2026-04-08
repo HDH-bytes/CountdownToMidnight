@@ -8,6 +8,13 @@ public class EnemyPatrolMovement : MonoBehaviour
 
     void Start()
     {
+        // drives the animater itself so the player and cone move together 
+        if (GetComponent<EnemyPatrol>() != null)
+        {
+            enabled = false;
+            return;
+        }
+
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
