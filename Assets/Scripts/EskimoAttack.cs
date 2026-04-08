@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EskimoAttack : MonoBehaviour
+public class EskimoAttack : Enemy
 {
     
     public GameObject bulletPrefab;

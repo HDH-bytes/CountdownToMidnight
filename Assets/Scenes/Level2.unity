@@ -40135,6 +40135,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d85a31b2d93d51048a37531a7e01c324, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EskimoAttack
+  maxHealth: 0
+  currentHealth: 0
+  speed: 0
+  points: 0
   bulletPrefab: {fileID: 1306447330979268347, guid: a0d286152554e4945936d7349ab5a1ae, type: 3}
   firePoint: {fileID: 1849673934}
   fireRate: 1.7
@@ -40917,72 +40921,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8422806714490896489, guid: 2d2ce20902b93e14b8498c2acda9042d, type: 3}
   m_PrefabInstance: {fileID: 18974798}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1145138001 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2147418750633697096, guid: 2d2ce20902b93e14b8498c2acda9042d, type: 3}
-  m_PrefabInstance: {fileID: 1430801509}
-  m_PrefabAsset: {fileID: 0}
---- !u!61 &1145138008
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1145138001}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
---- !u!114 &1145138009
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1145138001}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d85a31b2d93d51048a37531a7e01c324, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EskimoAttack
-  bulletPrefab: {fileID: 1306447330979268347, guid: a0d286152554e4945936d7349ab5a1ae, type: 3}
-  firePoint: {fileID: 1470453138}
-  fireRate: 1.4
 --- !u!1001 &1159420503
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43840,10 +43778,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6456926230777386016, guid: 2d2ce20902b93e14b8498c2acda9042d, type: 3}
-      propertyPath: fireRate
-      value: 1.5
-      objectReference: {fileID: 0}
     - target: {fileID: 8345744669882017180, guid: 2d2ce20902b93e14b8498c2acda9042d, type: 3}
       propertyPath: m_Constraints
       value: 4
@@ -43852,17 +43786,10 @@ PrefabInstance:
       propertyPath: speed
       value: 0.4
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6456926230777386016, guid: 2d2ce20902b93e14b8498c2acda9042d, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2147418750633697096, guid: 2d2ce20902b93e14b8498c2acda9042d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1145138008}
-    - targetCorrespondingSourceObject: {fileID: 2147418750633697096, guid: 2d2ce20902b93e14b8498c2acda9042d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1145138009}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d2ce20902b93e14b8498c2acda9042d, type: 3}
 --- !u!1001 &1468314398
 PrefabInstance:
@@ -43968,11 +43895,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 236558191}
   m_SourcePrefab: {fileID: 100100000, guid: 970377d56f83f7a4288bd63a6e75f845, type: 3}
---- !u!4 &1470453138 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8422806714490896489, guid: 2d2ce20902b93e14b8498c2acda9042d, type: 3}
-  m_PrefabInstance: {fileID: 1430801509}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1525286447 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2147418750633697096, guid: 2d2ce20902b93e14b8498c2acda9042d, type: 3}
@@ -43990,6 +43912,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d85a31b2d93d51048a37531a7e01c324, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EskimoAttack
+  maxHealth: 0
+  currentHealth: 0
+  speed: 0
+  points: 0
   bulletPrefab: {fileID: 1306447330979268347, guid: a0d286152554e4945936d7349ab5a1ae, type: 3}
   firePoint: {fileID: 1563799464}
   fireRate: 1.5
@@ -44444,6 +44370,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d85a31b2d93d51048a37531a7e01c324, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EskimoAttack
+  maxHealth: 0
+  currentHealth: 0
+  speed: 0
+  points: 0
   bulletPrefab: {fileID: 1306447330979268347, guid: a0d286152554e4945936d7349ab5a1ae, type: 3}
   firePoint: {fileID: 1135444476}
   fireRate: 1.3

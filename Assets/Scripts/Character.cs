@@ -12,7 +12,6 @@ public abstract class Character : MonoBehaviour, IDamageable
     public int maxHealth;
     public int currentHealth;
     public float speed;
-    public Weapon currentWeapon;
  
     protected virtual void Start()
     {

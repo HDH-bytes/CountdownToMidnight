@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 3714158130135346306}
   - component: {fileID: 1921468629235257787}
   - component: {fileID: 8345744669882017180}
-  - component: {fileID: 6456926230777386016}
   - component: {fileID: 8742763271134713144}
+  - component: {fileID: 2438859236672267042}
+  - component: {fileID: 5294276641694831745}
   m_Layer: 0
   m_Name: Eskimo enemy
   m_TagString: Untagged
@@ -144,22 +145,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!114 &6456926230777386016
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2147418750633697096}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40d2c84dcedaf8149b635021f91164b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyAttack
-  bulletPrefab: {fileID: 1306447330979268347, guid: a0d286152554e4945936d7349ab5a1ae, type: 3}
-  firePoint: {fileID: 3971590618336017085, guid: c2d62e87b42560f4483dcde178dc4f24, type: 3}
-  fireRate: 1
+  m_Constraints: 4
 --- !u!114 &8742763271134713144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,7 +158,72 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26674a428b7882d46927c181c1a78c80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EskimoFollow
-  speed: 3
+  speed: 0.4
+--- !u!61 &2438859236672267042
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2147418750633697096}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &5294276641694831745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2147418750633697096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d85a31b2d93d51048a37531a7e01c324, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EskimoAttack
+  maxHealth: 10
+  currentHealth: 10
+  speed: 2
+  points: 67
+  bulletPrefab: {fileID: 1306447330979268347, guid: a0d286152554e4945936d7349ab5a1ae, type: 3}
+  firePoint: {fileID: 8422806714490896489}
+  fireRate: 1.4
 --- !u!1001 &6744224918971117192
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -233,5 +284,10 @@ PrefabInstance:
 --- !u!4 &8312171674959913864 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3369405889211583744, guid: c27393b50ce7a024d91f62ca9eadda84, type: 3}
+  m_PrefabInstance: {fileID: 6744224918971117192}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8422806714490896489 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2989157326799056609, guid: c27393b50ce7a024d91f62ca9eadda84, type: 3}
   m_PrefabInstance: {fileID: 6744224918971117192}
   m_PrefabAsset: {fileID: 0}
