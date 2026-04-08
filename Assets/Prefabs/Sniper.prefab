@@ -136,6 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f0314a513a21ff418740cea2a073222, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gun
+  unlockSceneIndex: 5
   bulletPrefab: {fileID: 7489083162628369932, guid: a384e9c955e46d346907b3b48ff6fef2, type: 3}
   firePoint: {fileID: 1194360435489542056}
   cooldownTime: 1

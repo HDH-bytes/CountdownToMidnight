@@ -136,6 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 920bdfdfa39f47e4d92954bc83e265ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MeleeWeapon
+  unlockSceneIndex: 4
   attackPoint: {fileID: 6543445748487258344}
   attackRange: 1.5
   damage: 5
