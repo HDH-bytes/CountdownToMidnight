@@ -133,10 +133,10 @@ public class BossAI : Enemy
         {
             bossCollider.enabled = false;
         }
-        
-        base.Die();
 
         Debug.Log("Boss Defeated!");
+        
+        Destroy(gameObject);
     }
 
     void OnDrawGizmosSelected()
