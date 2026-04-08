@@ -6,7 +6,7 @@ public class PlayerStats : Character
     public string playerName;
     public string characterName; 
 
-    void Start()
+    new void Start()
     {
         
         playerName = PlayerPrefs.GetString("SavedPlayerName", "Player 1");
