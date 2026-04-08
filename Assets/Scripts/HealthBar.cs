@@ -7,7 +7,7 @@ using TMPro;
 public class HealthBar : MonoBehaviour
 {
     public Slider healthBarSlider;
-    public TextMeshProUGUI PlayerHealtBarValueText;
+    public TextMeshProUGUI playerHealtBarValueText;
 
     public int maxHealth;
     public int currentHealth;
@@ -19,7 +19,7 @@ public class HealthBar : MonoBehaviour
     
     void Update()
     {
-        PlayerHealtBarValueText.text = currentHealth + "/" + maxHealth.ToString();
+        playerHealtBarValueText.text = currentHealth + "/" + maxHealth.ToString();
 
         healthBarSlider.value = currentHealth;
         healthBarSlider.maxValue = maxHealth;

@@ -138,4 +138,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MeleeWeapon
   attackPoint: {fileID: 6543445748487258344}
   attackRange: 1.5
-  damage: 40
+  damage: 5
+  lungeDistance: 1
+  lungeDuration: 0.2

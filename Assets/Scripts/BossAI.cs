@@ -99,6 +99,7 @@ public class BossAI : Enemy
         animator.SetTrigger("Attack");
 
         Debug.Log("Boss swings at the closest player!");
+        LifeManager.Instance.LoseHeart();
 
         Invoke(nameof(ResetAttack), 1f);
     }
@@ -111,19 +112,19 @@ public class BossAI : Enemy
         }
     }
 
-    public override void TakeDamage(int damage)
-    {
-        if (isDead) return;
-
-        base.TakeDamage(damage);
-        Debug.Log("Boss took damage! Health remaining: " + currentHealth);
-    }
+    // public override void TakeDamage(int damage)
+    // {
+    //     if (isDead) return;
+    //
+    //     base.TakeDamage(damage);
+    //     Debug.Log("Boss took damage! Health remaining: " + currentHealth);
+    // }
 
     protected override void Die()
     {
-        if (isDead) return;
+        // if (isDead) return;
 
-        isDead = true;
+        // isDead = true;
 
         animator.SetBool("isWalking", false);
         animator.SetTrigger("Death");
@@ -132,6 +133,8 @@ public class BossAI : Enemy
         {
             bossCollider.enabled = false;
         }
+        
+        base.Die();
 
         Debug.Log("Boss Defeated!");
     }
