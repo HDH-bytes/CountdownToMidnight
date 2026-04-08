@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class EskimoFollow : MonoBehaviour
 {
-    public Transform player;
     public float speed = 3f;
 
+    private Transform player;
     private Rigidbody2D rb;
     private Animator animator;
 
@@ -16,7 +16,18 @@ public class EskimoFollow : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (player == null) return;
+        if (player == null)
+        {
+            GameObject p = GameObject.FindWithTag("Player");
+            if (p != null)
+            {
+                player = p.transform;
+            }
+            else
+            {
+                return;
+            }
+        }
 
         Vector2 direction = (player.position - transform.position).normalized;
 
@@ -24,6 +35,6 @@ public class EskimoFollow : MonoBehaviour
 
         animator.SetFloat("moveX", direction.x);
         animator.SetFloat("moveY", direction.y);
-        animator.SetBool("isMoving", direction != Vector2.zero);
+        animator.SetBool("isMoving", direction.magnitude > 0.01f);
     }
 }
