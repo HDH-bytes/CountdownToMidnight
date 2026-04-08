@@ -30,6 +30,7 @@ public class EnemyPatrol : MonoBehaviour
     private float targetAngle;    //angle we're rotating toward
     private Vector2 facingDir;    //unit vector from facingAngle
 
+    private Animator animator;
     private Mesh coneMesh;
     private MeshFilter coneMeshFilter;
     private Material coneMaterial;
@@ -38,6 +39,7 @@ public class EnemyPatrol : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
         startPosition = rb.position;
         direction = reverseStart ? -1 : 1;
 
@@ -123,6 +125,14 @@ public class EnemyPatrol : MonoBehaviour
         {
             state = State.PlayerSpotted;
             GameOverScreen.Show();
+        }
+
+        if (animator != null)
+        {
+            bool isMoving = state == State.Moving;
+            animator.SetBool("IsMoving", isMoving);
+            animator.SetFloat("MoveX", facingDir.x);
+            animator.SetFloat("MoveY", facingDir.y);
         }
 
         BuildConeMesh();
