@@ -30,6 +30,8 @@ public class EnemyAttack : MonoBehaviour
 
     void Shoot()
     {
-        Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        GameObject b = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        Bullet bullet = b.GetComponent<Bullet>();
+        if (bullet != null) bullet.isPlayerBullet = false;
     }
 }

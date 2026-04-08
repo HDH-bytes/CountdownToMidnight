@@ -5,6 +5,7 @@ public class Bullet : MonoBehaviour
     public int bulletDamage = 5;
     public float bulletSpeed = 20f;
     public float lifeTime = 3f;
+    [HideInInspector] public bool isPlayerBullet = true;
 
     void Start()
     {
@@ -25,12 +26,15 @@ public class Bullet : MonoBehaviour
             return;
         }
 
-        Enemy enemy = other.GetComponent<Enemy>();
-        if (enemy != null)
+        if (isPlayerBullet)
         {
-            enemy.TakeDamage(bulletDamage);
-            Destroy(gameObject);
-            return;
+            Enemy enemy = other.GetComponent<Enemy>();
+            if (enemy != null)
+            {
+                enemy.TakeDamage(bulletDamage);
+                Destroy(gameObject);
+                return;
+            }
         }
         
     }

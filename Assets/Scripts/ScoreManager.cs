@@ -12,7 +12,7 @@ public class ScoreManager : MonoBehaviour
     public TMP_Text rankLabel;
     public TMP_Text xpLabel;
 
-    // Scenes where the XP bar must be hidden
+    //scenes where the XP bar must be hidden
     private static readonly System.Collections.Generic.HashSet<string> HiddenScenes
         = new System.Collections.Generic.HashSet<string> { "StartScene", "ChooseCharacter" };
 
@@ -27,6 +27,7 @@ public class ScoreManager : MonoBehaviour
     };
 
     int _totalXP;
+    private string _previousScene;
 
     void Awake()
     {
@@ -44,15 +45,23 @@ public class ScoreManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        // Hide the XP bar canvas on non-level scenes.
-        // Use canvas.enabled (not gameObject.SetActive) so this MonoBehaviour
-        // stays active and OnSceneLoaded keeps firing on future scene loads.
         Canvas c = GetXPCanvas();
         if (c != null)
             c.enabled = !HiddenScenes.Contains(scene.name);
+
+        // Cut score to 40% when moving from one level to the next
+        if (_previousScene != null
+            && !HiddenScenes.Contains(_previousScene)
+            && !HiddenScenes.Contains(scene.name))
+        {
+            _totalXP = Mathf.RoundToInt(_totalXP * 0.4f);
+            UpdateUI();
+        }
+
+        _previousScene = scene.name;
     }
 
-    /// <summary>Finds the Canvas that contains the XP bar.</summary>
+   
     private Canvas GetXPCanvas()
     {
         if (xpBar != null)
@@ -61,6 +70,14 @@ public class ScoreManager : MonoBehaviour
     }
 
     public void AddXP(int amount)
+    {
+        if (SceneManager.GetActiveScene().name == "Level2") return;
+        _totalXP += amount;
+        UpdateUI();
+    }
+
+    // Always adds XP regardless of scene — use for level completion rewards
+    public void AddCompletionXP(int amount)
     {
         _totalXP += amount;
         UpdateUI();

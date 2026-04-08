@@ -10,7 +10,7 @@ public class FinishPoint : MonoBehaviour
         Time.timeScale = 1f; // ensure Level4Timer freeze doesn't carry into the next scene
 
         int currentIndex = SceneManager.GetActiveScene().buildIndex;
-        ScoreManager.Instance?.AddXP(levelManager.GetXPForLevel(currentIndex));
+        ScoreManager.Instance?.AddCompletionXP(levelManager.GetXPForLevel(currentIndex));
 
         int nextIndex = currentIndex + 1;
         if (nextIndex < SceneManager.sceneCountInBuildSettings)

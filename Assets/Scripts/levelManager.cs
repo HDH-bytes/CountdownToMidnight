@@ -13,6 +13,6 @@ public class levelManager : MonoBehaviour
     public void CompleteLevel()
     {
         int index = SceneManager.GetActiveScene().buildIndex;
-        ScoreManager.Instance.AddXP(GetXPForLevel(index));
+        ScoreManager.Instance.AddCompletionXP(GetXPForLevel(index));
     }
 }
