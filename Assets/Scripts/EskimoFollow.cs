@@ -37,4 +37,12 @@ public class EskimoFollow : MonoBehaviour
         animator.SetFloat("moveY", direction.y);
         animator.SetBool("isMoving", direction.magnitude > 0.01f);
     }
+    public void TakeDamage(int damage)
+    {
+            Die();
+    }
+    protected void Die()
+    {
+        Destroy(gameObject);
+    }
 }

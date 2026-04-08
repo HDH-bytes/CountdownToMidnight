@@ -9,30 +9,35 @@ public class Bullet : MonoBehaviour
     void Start()
     {
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
-        
         rb.linearVelocity = transform.right * bulletSpeed;
-        
+
         Destroy(gameObject, lifeTime);
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player")) 
+        if (other.CompareTag("Player"))
         {
-            return; 
-        }
-        
-        Enemy enemy = other.GetComponent<Enemy>();
+            EnsureLifeManager();
+            LifeManager.Instance.LoseHeart();
 
+            Destroy(gameObject);
+            return;
+        }
+
+        Enemy enemy = other.GetComponent<Enemy>();
         if (enemy != null)
         {
             enemy.TakeDamage(bulletDamage);
-        }
-
-        if (other.CompareTag("Wall") || other.CompareTag("Enemy"))
-        {
-            // Destroys bullet upon collision
             Destroy(gameObject);
+            return;
         }
+        
+    }
+
+    private static void EnsureLifeManager()
+    {
+        if (LifeManager.Instance == null)
+            new GameObject("LifeManager").AddComponent<LifeManager>();
     }
 }

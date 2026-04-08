@@ -11,7 +11,6 @@ public class EnemyAttack : MonoBehaviour
 
     void Update()
     {
-        
         if (player == null)
         {
             GameObject p = GameObject.FindGameObjectWithTag("Player");
