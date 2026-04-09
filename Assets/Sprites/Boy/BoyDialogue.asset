@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 824a18ca59941d2428defbff3d9ca21b, type: 3}
+  m_Name: BoyDialogue
+  m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
+  npcName: Little Boy
+  npcPortrait: {fileID: -7527145504033472756, guid: eb7c67ad43d260c4c9535c0cd9400365, type: 3}
+  dialogueLines:
+  - "Congratulations on taking down General Volkov! That fight was no small feat,
+    and you\u2019ve officially brought peace to one of the most haunted souls in
+    the Buran Army."
+  - This was once his childhood home. General Volkov was a truly happy man, but when
+    the war broke out, he lost his entire family to the flames
+  - "Consumed by grief, he enlisted in the army, where they performed horrific experiments
+    on him\u2014turning him into more machine than man."
+  - By defeating, you set his spirit free. Thanks for putting him to rest.
+  autoProgressLines: 
+  autoProgressDelay: 1.5
+  typingSpeed: 0.05
