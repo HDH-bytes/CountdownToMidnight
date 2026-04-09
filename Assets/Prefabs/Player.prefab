@@ -260,8 +260,8 @@ Transform:
   m_GameObject: {fileID: 3898376022755239336}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -29.7, y: -29.31, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -29.7223, y: -29.3519, z: 0}
+  m_LocalScale: {x: 0.935, y: 0.9162, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5630775181006556730}
@@ -661,7 +661,6 @@ MonoBehaviour:
   maxHealth: 0
   currentHealth: 0
   speed: 0
-  currentWeapon: {fileID: 0}
   playerName: 
   characterName: Normal Guy
 --- !u!1 &5200738820984380100
