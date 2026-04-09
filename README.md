@@ -53,7 +53,7 @@ Hammad (HDH-bytes):
 - Bulit the Level 1 urban map.
 - Completed Level1, developed the enemy AI including search path, vision cone, and fixed animation bug
 - Bulit the Level0 map, with urban and nature mix
-- Developed the shopkeeper, including interaction UI menu and backend to increase speed.
+- Developed the Shopkeeper, including interactiblity, UI menu and backend to increase speed.
 - Developed the ScoreManager, that manages the players XP as they pass levels or kill enemies, bundled with ranks and UI
 - Fixed FinishPoint indexing bug, where Levels would not continue.
 - Fixed Character Prefabs
