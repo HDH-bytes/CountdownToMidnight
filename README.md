@@ -63,6 +63,13 @@ Jesse (JLBeitz):
 - Set up the essential folder architecture, including prefabs and UI elements, while managing the repository's version control settings.
 - Created NPCs with dialogue that explains the story, along with an interaction system for possible future use.
 - Fixed bugs in code whenever they came up.
+- Made all of the weapons the way they currently function
+- Made the enemy spawner which spawns them in at regular intervals
+- Made level 3 which implements the 2 points above into a challenging new level
+- Fixed the eskimo classes to use inheritance so that they have health and can be damaged
+- Created a script that can make objects activate and deactivate depending on certain conditions
+- Created a weapon switcher that can utilize both the number pad and scroll wheel to change weapons
+- Made weapons unlock upon reaching certain levels to balance the player power
   
 Victor (victor-liao93):
 - Made eskimo classes like attack and follow
