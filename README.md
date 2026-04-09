@@ -47,9 +47,7 @@ Reminder: Please check the commit histories on both oldCommit and main for the f
 
 Hammad (HDH-bytes): 
 - Developed the Character base class and IDamageable interface. (Uses OOP, such as abstraction)
-- Implemented the intital tilemap with Japan themed tile palette.
-- Built the first playable map (w/ house, cabins, shops) with proper layer setup. (Ground, WalkBehind, WalkInFront and Decor)
-- Added tilemap and player collision using RigidBody mechanic.
+- Implemented Japan tilemap and player collision using RigidBody mechanic.
 - Bulit the Level 1 urban map.
 - Completed Level1, developed the enemy AI including search path, vision cone, and fixed animation bug
 - Bulit the Level0 map, with urban and nature mix
