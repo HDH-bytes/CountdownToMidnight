@@ -28,7 +28,7 @@ Level 4 - Maze (Demir): Navigate through a maze with patrolling guards
 
 Level 5 - Boss (Justin): Defeat the final boss using all weapons acquired.
 
-# What has been implemented: (2026-03-25)
+# What has been implemented: (2026-03-25) --> Updated (2026-04-08)
 
 Tilemap-based world with multiple layers, collision and a navigable environment
 
@@ -51,6 +51,13 @@ Hammad (HDH-bytes):
 - Built the first playable map (w/ house, cabins, shops) with proper layer setup. (Ground, WalkBehind, WalkInFront and Decor)
 - Added tilemap and player collision using RigidBody mechanic.
 - Bulit the Level 1 urban map.
+- Completed Level1, developed the enemy AI including search path, vision cone, and fixed animation bug
+- Bulit the Level0 map, with urban and nature mix
+- Developed the shopkeeper, including interaction UI menu and backend to increase speed.
+- Developed the ScoreManager, that manages the players XP as they pass levels or kill enemies, bundled with ranks and UI
+- Fixed FinishPoint indexing bug, where Levels would not continue.
+- Fixed Character Prefabs
+- Refactored code to improve readabilty and maintainabilty
 
 Jesse (JLBeitz):
 - Built the complete animation system for the main character, covering movement, running, and all directional idle states.
