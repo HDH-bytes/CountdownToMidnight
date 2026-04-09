@@ -3,39 +3,40 @@ using UnityEngine;
 public class FenceGateController : MonoBehaviour
 {
     [Header("Gate Settings")]
-    public GameObject fenceToOpen;
-    
-    [Tooltip("Make sure your Player GameObject has this tag!")]
+    public GameObject fence;
     public string playerTag = "Player";
 
-    // Keeps track of whether the player is currently allowed through
-    private bool isGateOpen = false;
+    [Header("Trigger Behavior")]
+    [Tooltip("Check this if this tripwire opens the fence. Uncheck if it closes the fence.")]
+    public bool isOpener = true;
+    
+    [Tooltip("If true, this tripwire permanently turns off after one use.")]
+    public bool triggerOnlyOnce = true; 
 
-    /// <summary>
-    /// Call this method from your NPC's dialogue script or interaction event
-    /// </summary>
-    public void OpenFenceFromNPC()
-    {
-        if (fenceToOpen != null)
-        {
-            fenceToOpen.SetActive(false); // Hide the fence
-            isGateOpen = true;            // Update our internal tracker
-        }
-    }
+    // Internal tracker to see if we've already used this tripwire
+    private bool hasTriggered = false;
 
-    /// <summary>
-    /// This automatically runs when something touches the Trigger Collider on this object
-    /// </summary>
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // 1. Did the Player touch it?
-        // 2. Is the gate currently open?
-        if (other.CompareTag(playerTag) && isGateOpen)
+        // Check if it's the player AND if this tripwire is still active
+        if (other.CompareTag(playerTag) && !hasTriggered)
         {
-            if (fenceToOpen != null)
+            if (fence != null)
             {
-                fenceToOpen.SetActive(true); // Bring the fence back!
-                isGateOpen = false;          // Reset the state so it doesn't trigger repeatedly
+                if (isOpener)
+                {
+                    fence.SetActive(false); // Hide the fence (Open)
+                }
+                else
+                {
+                    fence.SetActive(true);  // Show the fence (Close)
+                }
+            }
+
+            // Lock this tripwire so it can never be used again
+            if (triggerOnlyOnce)
+            {
+                hasTriggered = true;
             }
         }
     }
