@@ -68,6 +68,13 @@ Demir (guveld):
 - Added camera to follow the character as it moves.
 - Added a sample scene transition to demonstrate level progression.
 - Added Finish Point and Scene Controller scripts.
+- Added Level 4 Map
+- Added a functional health bar
+- Added functional extra heart option to the shopkeeper
+- Implemented a clock on Level 4 as a lose condition
+- Added retry option for levels
+- Added start new game option for when the game is lost
+- Helped with testing
   
 Justin (jchiu233): 
 - Developed the startup menu with start and exit buttons.
