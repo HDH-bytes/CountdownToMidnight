@@ -67,9 +67,12 @@ Jesse (JLBeitz):
 - Fixed bugs in code whenever they came up.
   
 Victor (victor-liao93):
-- Made score manager, enemy and enemy follow class with inheritance.
+- Made eskimo classes like attack and follow
 - Made inventory slots and inventory script
 - Reorganized files
+- Some changes to win scene
+- Made level 2 map
+- Made eskimo animations
 
 Demir (guveld):
 - Added camera to follow the character as it moves.
