@@ -465,6 +465,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5738759729219529721, guid: 591b96386badb0b4eb8c46df25c017b0, type: 3}
+        m_TargetAssemblyTypeName: FenceGateController, Assembly-CSharp
+        m_MethodName: OpenFenceFromNPC
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 87a21b56-f241-47d8-aaa2-9b4ddf85f2c4
     m_ActionName: 'Player/Interact[/Keyboard/e]'
   - m_PersistentCalls:

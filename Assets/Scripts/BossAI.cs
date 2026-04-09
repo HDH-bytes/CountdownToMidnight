@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BossAI : Enemy
 {
@@ -137,6 +138,8 @@ public class BossAI : Enemy
         Debug.Log("Boss Defeated!");
         
         Destroy(gameObject);
+        
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     void OnDrawGizmosSelected()
