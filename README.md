@@ -94,8 +94,17 @@ Demir (guveld):
 Justin (jchiu233): 
 - Developed the startup menu with start and exit buttons.
 - Developed the tab UI which when opened can look at inventory, settings and map.
-- Made potions class.
+- Made the new win scene map on my own.
 - Made a new scene where you can choose character.
+- Made a player spawner so that the character you choose loads up on the next level
+- Made level 5 map
+- Added Background music
+- Made the boss script with detection range, health and animations
+- Did most of the animations for the main characters
+- Did enemy animations
+- Added more tilemaps for scenes
+- Updated bugs whenever it came up
+- Added some backstory to the game
   
 
 
