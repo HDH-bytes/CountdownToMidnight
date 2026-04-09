@@ -26,6 +26,12 @@ public class Bullet : MonoBehaviour
             return;
         }
 
+        if (other.CompareTag("Wall"))
+        {
+            Destroy(gameObject);
+            return;
+        }
+
         if (isPlayerBullet)
         {
             Enemy enemy = other.GetComponent<Enemy>();

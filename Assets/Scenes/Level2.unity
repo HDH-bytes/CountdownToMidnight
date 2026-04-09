@@ -362,7 +362,7 @@ GameObject:
   - component: {fileID: 384398476}
   m_Layer: 3
   m_Name: Buildings
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39104,7 +39104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerSpawner
   character1Prefab: {fileID: 3898376022755239336, guid: d32e860caac6381469b227c654bd3d96, type: 3}
   character2Prefab: {fileID: 8527953543531883416, guid: fec0d025ee0ff3f489eb11c6903d9c3b, type: 3}
-  character3Prefab: {fileID: 0}
+  character3Prefab: {fileID: 8254341043332265926, guid: b28a5014ba4d9c2409a4e1feb4064348, type: 3}
 --- !u!4 &697478076
 Transform:
   m_ObjectHideFlags: 0
