@@ -1392,7 +1392,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthBar
   healthBarSlider: {fileID: 2065678804}
-  PlayerHealtBarValueText: {fileID: 160410345}
+  playerHealtBarValueText: {fileID: 0}
   maxHealth: 100
   currentHealth: 0
 --- !u!1 &356602693
@@ -20474,7 +20474,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BossAI
   maxHealth: 3
-  moveSpeed: 3
+  currentHealth: 0
+  speed: 0
+  points: 0
   attackRange: 1.5
   detectionRange: 10
 --- !u!4 &984019833
