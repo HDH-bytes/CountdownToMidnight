@@ -863,9 +863,9 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1242137289}
-  - {fileID: 1798027612}
   - {fileID: 754062689}
+  - {fileID: 1798027612}
+  - {fileID: 1242137289}
   - {fileID: 591163867}
   m_Father: {fileID: 115459255}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -97967,10 +97967,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPC
   dialogueData: {fileID: 11400000, guid: 1bdddfb42e780c14dbe0842c9d5dd46f, type: 2}
-  dialoguePanel: {fileID: 0}
-  dialogueText: {fileID: 0}
-  nameText: {fileID: 0}
-  portraitImage: {fileID: 0}
+  dialoguePanel: {fileID: 175872242}
+  dialogueText: {fileID: 754062690}
+  nameText: {fileID: 1798027613}
+  portraitImage: {fileID: 1242137290}
   dialogueIndex: 0
 --- !u!61 &689743918
 BoxCollider2D:
@@ -99180,10 +99180,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPC
   dialogueData: {fileID: 11400000, guid: 8ceda16234a4e874dbe369490d950d98, type: 2}
-  dialoguePanel: {fileID: 0}
-  dialogueText: {fileID: 0}
-  nameText: {fileID: 0}
-  portraitImage: {fileID: 0}
+  dialoguePanel: {fileID: 175872242}
+  dialogueText: {fileID: 754062690}
+  nameText: {fileID: 1798027613}
+  portraitImage: {fileID: 1242137290}
   dialogueIndex: 0
 --- !u!61 &1009159565
 BoxCollider2D:
@@ -99813,10 +99813,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPC
   dialogueData: {fileID: 11400000, guid: 24273d89da6796f479d0105563129659, type: 2}
-  dialoguePanel: {fileID: 0}
-  dialogueText: {fileID: 0}
-  nameText: {fileID: 0}
-  portraitImage: {fileID: 0}
+  dialoguePanel: {fileID: 175872242}
+  dialogueText: {fileID: 754062690}
+  nameText: {fileID: 1798027613}
+  portraitImage: {fileID: 1242137290}
   dialogueIndex: 0
 --- !u!61 &1196667399
 BoxCollider2D:
@@ -100320,10 +100320,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPC
   dialogueData: {fileID: 11400000, guid: a67c9b8438716ef4083a007d35aece3a, type: 2}
-  dialoguePanel: {fileID: 0}
-  dialogueText: {fileID: 0}
-  nameText: {fileID: 0}
-  portraitImage: {fileID: 0}
+  dialoguePanel: {fileID: 175872242}
+  dialogueText: {fileID: 754062690}
+  nameText: {fileID: 1798027613}
+  portraitImage: {fileID: 1242137290}
   dialogueIndex: 0
 --- !u!61 &1393040546
 BoxCollider2D:
