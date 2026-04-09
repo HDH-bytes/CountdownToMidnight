@@ -12,7 +12,7 @@ public class Enemy : Character
     
     protected override void Die()
     {
-        ScoreManager.Instance.AddXP(points);
         Destroy(gameObject);
+        ScoreManager.Instance.AddXP(points);
     }
 }
